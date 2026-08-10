@@ -1,8 +1,4 @@
 /* Shared checkout spacing and helper styles */
-.cursor-pointer {
-  cursor: pointer;
-}
-
 /* Checkout fields use one consistent shape and focus state */
 .form-control, .form-select {
   border: 1px solid #e8e8e8 !important;

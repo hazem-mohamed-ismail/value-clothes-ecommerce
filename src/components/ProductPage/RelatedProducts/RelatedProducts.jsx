@@ -6,7 +6,7 @@ import "./RelatedProducts.css";
 
 export default function RelatedProducts() {
   const [active, setActive] = useState("related");
-  const productsData = useProductContext();
+  const { productsData = [] } = useProductContext() || {};
 
   const relatedProductsData = productsData.filter(p => [10, 11, 12, 13].includes(p.id));
   const recentlyViewedData = productsData.filter(p => [14, 15, 16, 17].includes(p.id));

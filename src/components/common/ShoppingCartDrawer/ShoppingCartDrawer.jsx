@@ -9,10 +9,10 @@ import ShoppingCartDrawerItem from "./ShoppingCartDrawerItem";
 const ShoppingCartDrawer = () => {
   const { show, setShow } = useShowSideNavCart();
   const { cartItems } = useShoppingCart();
-  const products = useProductContext();
+  const { productsData = [] } = useProductContext() || {};
 
   const filteredCartItems = cartItems.map((cartItem) => {
-    const product = products.find((p) => p.id === cartItem.id);
+    const product = productsData.find((p) => p.id === cartItem.id);
     return { ...product, quantity: cartItem.quantity };
   });
 

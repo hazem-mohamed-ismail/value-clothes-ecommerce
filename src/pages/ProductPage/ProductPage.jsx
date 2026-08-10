@@ -6,8 +6,8 @@ import SizeGuide from "../../components/ProductPage/SizeGuide/SizeGuide";
 import { useProductContext } from "../../context/ProductFromApi";
 
 export default function ProductPage() {
-  const products = useProductContext();
-  const product = products.find((item) => item.id === 13);
+  const { productsData = [] } = useProductContext() || {};
+  const product = productsData.find((item) => item.id === 13);
 
   return (
     <div className="container my-5">

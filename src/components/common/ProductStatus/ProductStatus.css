@@ -1,0 +1,20 @@
+.product-status {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  color: #475569;
+  text-align: center;
+  width: 100%;
+}
+
+.product-status-error {
+  color: #b42318;
+}
+
+.product-status p {
+  margin: 0;
+  font-size: 16px;
+}

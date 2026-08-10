@@ -7,26 +7,35 @@ import { useNavigate } from "react-router-dom";
 export default function ProductCard({ product, className = "" }) {
   const navigate = useNavigate();
   const { setShow } = useShowSideNavCart();
-  const { increaseCartQuantity } = useShoppingCart();
+  const { increaseCartQuantity, getItemsQuantity } = useShoppingCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
+
   if (!product) return null;
 
-  const Stars = [...Array(product.rating)].map((_, index) => (
+  // جلب الصورة الأولى من مصفوفة الصور مع fallback للحماية
+  const productImage = product.images?.[0] || product.image;
+  const hoverImage = product.images?.[1] || productImage;
+
+  // تقييم افتراضي (لأن الـ API لا يحتوي على rating)
+  const ratingCount = product.rating || 5;
+  const Stars = [...Array(ratingCount)].map((_, index) => (
     <span key={index} className="star">
       <i className="fa-solid fa-star"></i>
     </span>
   ));
 
   return (
-    <div className={` product-card ${className}`}>
+    <div className={`product-card ${className}`}>
       <div className="image-container">
+        {/* Badges */}
         <div className="badges">
-          {product.discount && (
-            <span className="badge badge-discount">-{product.discount}%</span>
+            <span className="badge badge-discount">-15%</span>
+          {product.category?.name && (
+            <span className="badge badge-trend">{product.category.name}</span>
           )}
-          {product.trend && <span className="badge badge-trend">TREND</span>}
         </div>
 
+        {/* Wishlist Button */}
         <div className="action-buttons">
           <button
             className="action-btn"
@@ -36,63 +45,59 @@ export default function ProductCard({ product, className = "" }) {
             <i
               className={
                 isInWishlist(product.id)
-                  ? "fas fa-heart"
+                  ? "fas fa-heart text-red-500"
                   : "far fa-heart"
               }
             ></i>
           </button>
-          
-          {/* <button className="action-btn" aria-label="Quick view">
-            <i className="fa-regular fa-eye"></i>
-          </button> */}
-
         </div>
 
+        {/* Product Image */}
         <img
-          src={product.image}
-          alt={product.name}
-          className="product-image cursor-pointer"
+          src={productImage}
+          alt={product.title}
+          className="product-image product-image-primary cursor-pointer"
           onClick={() => {
-            navigate("/product");
+            navigate(`/product`);
+          }}
+        />
+        <img
+          src={hoverImage}
+          alt={`${product.title} alternate view`}
+          className="product-image product-image-hover cursor-pointer"
+          onClick={() => {
+            navigate(`/product`);
           }}
         />
 
+        {/* Quick Add Button */}
         <button
           className="quick-add-btn mb-1"
           onClick={() => {
             setShow(true);
-            increaseCartQuantity(product.id);
+            if (getItemsQuantity(product.id) === 0) {
+              increaseCartQuantity(product.id);
+            }
           }}
         >
-          Quick Add
+          {getItemsQuantity(product.id) > 0 ? "Update Cart" : "Quick Add"}
         </button>
       </div>
 
+      {/* Product Details */}
       <div className="product-details">
-        <h3 className="product-title">{product.name}</h3>
+        <h3 className="product-title" title={product.title}>
+          {product.title }
+        </h3>
 
         <div className="rating">{Stars}</div>
 
         <div className="price-container">
           <span className="current-price">${product.price}</span>
-          <span className="original-price">${product.originalPrice}</span>
+          {product.originalPrice && (
+            <span className="original-price">${product.originalPrice}</span>
+          )}
         </div>
-
-        {/* Color choices are disabled until product variants are connected
-        <div className="color-options">
-          <button
-            className="color-dot color-olive"
-            aria-label="Olive Green"
-          ></button>
-          <button
-            className="color-dot color-navy"
-            aria-label="Navy Blue"
-          ></button>
-          <button
-            className="color-dot color-beige active"
-            aria-label="Beige"
-          ></button>
-        </div> */}
       </div>
     </div>
   );

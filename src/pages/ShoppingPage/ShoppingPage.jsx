@@ -3,14 +3,38 @@ import ProductCard from "../../components/common/ProductCard/ProductCard";
 import Filters from "../../components/ShoppingPage/Filters/Filters";
 import DrawerFilters from "../../components/ShoppingPage/DrawerFilters/DrawerFilters";
 import "./ShoppingPage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useProductContext } from "../../context/ProductFromApi";
+import Stack from "@mui/material/Stack";
+import MuiPagination from "@mui/material/Pagination";
+import ProductStatus from "../../components/common/ProductStatus/ProductStatus";
 
 export default function ShoppingPage() {
   const [viewMode, setViewMode] = useState("col-lg-4 col-md-6 col-12");
-  const productsData = useProductContext();
+  const [currentPage, setCurrentPage] = useState(1);
+  const { productsData, loading, error } = useProductContext();
 
-  const renderProducts = productsData.map((product) => {
+  useEffect(() => {
+    document.body.scrollTop = 300;
+  }, [currentPage]);
+
+  if (loading) {
+    return (
+      <ProductStatus loading={loading} />
+    );
+  }
+
+  if (error) {
+    return <ProductStatus error={error} />;
+  }
+
+  const productsPerPage = 14;
+  const pageCount = Math.ceil(productsData.length / productsPerPage);
+  const lastProduct = currentPage * productsPerPage;
+  const firstProduct = lastProduct - productsPerPage;
+  const currentProducts = productsData.slice(firstProduct, lastProduct);
+
+  const renderProducts = currentProducts.map((product) => {
     return (
       <div className={viewMode} key={product.id}>
         <ProductCard product={product} />
@@ -88,6 +112,21 @@ export default function ShoppingPage() {
             <div className="row g-4 shopping-page-products-container">
               {renderProducts}
             </div>
+
+            {pageCount > 1 && (
+              <Stack spacing={2} className="shopping-pagination-wrapper ms-3">
+                <MuiPagination
+                  count={pageCount}
+                  variant="outlined"
+                  shape="rounded"
+                  page={currentPage}
+                  onChange={(event, value) => {
+                    document.body.scrollTop = 300;
+                    setCurrentPage(value);
+                  }}
+                />
+              </Stack>
+            )}
           </main>
         </div>
       </section>

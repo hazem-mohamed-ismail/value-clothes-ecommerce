@@ -5,11 +5,11 @@ import { useShoppingCart } from "../../../context/CartSystem";
 import { useProductContext } from "../../../context/ProductFromApi";
 export default function OrderSummary() {
   const { cartItems } = useShoppingCart();
-  const products = useProductContext();
+  const { productsData = [] } = useProductContext() || {};
   const [shippingPrice, setShippingPrice] = useState(0);
 
   const TotalPrice = cartItems.reduce((total, item) => {
-    const Product = products.find((p) => p.id === item.id);
+    const Product = productsData.find((p) => p.id === item.id);
     return total + (Product ? Product.price * item.quantity : 0);
   }, 0);
 
@@ -76,7 +76,7 @@ export default function OrderSummary() {
 
       <div className="d-flex justify-content-between align-items-center mb-4">
         <span className="fs-5 fw-semibold">Total</span>
-        <span className="fs-4 fw-bold">${TotalPrice - shippingPrice}</span>
+        <span className="fs-4 fw-bold">${TotalPrice + shippingPrice}</span>
       </div>
 
       <div className="form-check mb-4">

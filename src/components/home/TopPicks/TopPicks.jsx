@@ -1,9 +1,10 @@
 import "./TopPicks.css";
 import ProductCard from "../../common/ProductCard/ProductCard";
+import ProductStatus from "../../common/ProductStatus/ProductStatus";
 import { useProductContext } from "../../../context/ProductFromApi";
 
 export default function TopPicks() {
-  const productsData = useProductContext();
+  const { productsData , loading, error } = useProductContext() || {};
   const topPicksProducts = productsData.filter((product) => {
     return [12, 18, 19, 20].includes(product.id);
   });
@@ -22,7 +23,13 @@ export default function TopPicks() {
       </p>
 
       <div className="row g-4 justify-content-center mt-4">
-        {renderProducts}
+        {loading ? (
+          <ProductStatus loading={loading} />
+        ) : error ? (
+          <ProductStatus error={error} />
+        ) : (
+          renderProducts
+        )}
       </div>
     </div>
   );

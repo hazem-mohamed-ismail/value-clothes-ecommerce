@@ -5,16 +5,20 @@ import { useShoppingCart } from "../../../context/CartSystem";
 
 export default function ProductList() {
   const { cartItems } = useShoppingCart();
-  const products = useProductContext();
+  const { productsData = [] } = useProductContext() || {};
 
-  const filteredCartItems = cartItems.map((cartItem) => {
-    const product = products.find((p) => p.id === cartItem.id);
-    return {...product, quantity: cartItem.quantity}
+  const renderItems = cartItems.map((cartItem) => {
+    const product = productsData.find((p) => p.id === cartItem.id);
+
+    if (!product) return null;
+
+    return (
+      <CartProductItem
+        key={cartItem.id}
+        product={{ ...product, quantity: cartItem.quantity }}
+      />
+    );
   });
-
-  const renderItems = filteredCartItems.map((product) => (
-    <CartProductItem key={product.id} product={product} />
-  ));
 
   return (
     <div className="product-list-container p-3 p-md-4">

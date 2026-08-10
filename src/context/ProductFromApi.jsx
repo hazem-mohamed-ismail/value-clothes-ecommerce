@@ -1,10 +1,11 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
 
-
 const ProductContext = createContext();
 function ProductFromApi({ children }) {
-  const [data, setData] = useState([]);
+  const [productsData, setProductsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     async function getProductsData() {
@@ -12,19 +13,22 @@ function ProductFromApi({ children }) {
         const response = await axios.get(
           "https://api.escuelajs.co/api/v1/products",
         );
-        setData(
+        setProductsData(
           response.data.map((product) => ({
             ...product,
-            type: product.category?.name ?? "Products",
-            image: product.images?.[0] ?? "",
+            type: product.category.name ,
+            image: product.images,
             originalPrice: product.price,
-            rating: product.rating?.rate ?? 0,
+            rating: product.rating,
             discount: 0,
-            trend: false,
           })),
         );
       } catch (error) {
         console.error("Error fetching products:", error);
+        setError(true);
+      } finally {
+          document.body.scrollTop = 0;
+        setLoading(false);
       }
     }
 
@@ -32,7 +36,9 @@ function ProductFromApi({ children }) {
   }, []);
 
   return (
-    <ProductContext.Provider value={data}>{children}</ProductContext.Provider>
+    <ProductContext.Provider value={{ productsData, loading, error }}>
+      {children}
+    </ProductContext.Provider>
   );
 }
 

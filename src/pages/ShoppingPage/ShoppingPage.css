@@ -24,6 +24,28 @@
   background: #ffffff;
 }
 
+.shopping-pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.shopping-pagination-wrapper .MuiPaginationItem-root {
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0 4px;
+  font-weight: 500;
+}
+
+.shopping-pagination-wrapper .Mui-selected {
+  background-color: #111 !important;
+  color: #fff !important;
+}
+
+.shopping-pagination-wrapper .MuiPaginationItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
 .toolbar-info {
   display: flex;
   align-items: center;

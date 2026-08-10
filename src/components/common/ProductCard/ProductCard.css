@@ -91,6 +91,17 @@
   display: block;
 }
 
+.product-image-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+.image-container:hover .product-image-hover {
+  opacity: 1;
+}
+
 /* Positions discount and trend badges above the product image */
 .badges {
   position: absolute;

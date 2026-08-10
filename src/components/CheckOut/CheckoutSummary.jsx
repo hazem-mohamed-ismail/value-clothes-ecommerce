@@ -1,23 +1,26 @@
 import { useShoppingCart } from "../../context/CartSystem";
 import CheckOutCartItem from "./CheckOutCartItem";
-import Products from '../../data/Products';
+import { useProductContext } from "../../context/ProductFromApi";
+
 
 export default function CheckoutSummary() {
   const { cartItems } = useShoppingCart();
+  const { productsData} = useProductContext();
+
+
+
+  // 3. معالجة البيانات بعد التأكد من عدم وجود Loading أو Error
   const filteredCartItems = cartItems.map((cartItem) => {
-    const product = Products.find((p) => p.id === cartItem.id);
+    const product = productsData?.find((p) => p.id === cartItem.id);
     return { ...product, quantity: cartItem.quantity };
   });
 
-  const subTotal=filteredCartItems.reduce((total,item)=>{
-    return total+(item.price*item.quantity)
-  },0)
+  const subTotal = filteredCartItems.reduce((total, item) => {
+    return total + (item.price || 0) * item.quantity;
+  }, 0);
 
   return (
-    <div
-      className="col-lg-5 ps-lg-5 position-sticky"
-      style={{ top: "100px" }}
-    >
+    <div className="col-lg-5 ps-lg-5 position-sticky" style={{ top: "100px" }}>
       <h2 className="h4 text-dark fw-normal mb-3">Shopping Cart</h2>
 
       {filteredCartItems.length === 0 ? (
@@ -50,14 +53,17 @@ export default function CheckoutSummary() {
         </div>
         <div className="d-flex justify-content-between align-items-center fs-6 text-dark">
           <span>Discounts</span>
-          <span>$0,00</span>
+          <span>$0.00</span>
         </div>
 
         <hr className="text-black-50 my-2" />
 
         <div className="d-flex justify-content-between align-items-center text-dark">
           <span className="fs-5">Total</span>
-          <span className="fs-3 fw-normal"><span className="text-success">$ </span>{subTotal.toFixed(2)}</span>
+          <span className="fs-3 fw-normal">
+            <span className="text-success">$ </span>
+            {subTotal.toFixed(2)}
+          </span>
         </div>
       </div>
     </div>

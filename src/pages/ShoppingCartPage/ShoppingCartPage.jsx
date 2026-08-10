@@ -3,9 +3,22 @@ import ProductList from "../../components/ShoppingCart/ProductList/ProductList";
 import OrderSummary from "../../components/ShoppingCart/OrderSummary/OrderSummary";
 import "./ShoppingCartPage.css";
 import { useShoppingCart } from "../../context/CartSystem";
+import { useProductContext } from "../../context/ProductFromApi";
+import ProductStatus from "../../components/common/ProductStatus/ProductStatus";
 
 export default function ShoppingCartPage() {
   const { cartItems } = useShoppingCart();
+  const { loading, error } = useProductContext() || {};
+
+  if (loading) {
+    return (
+      <ProductStatus loading={loading} />
+    );
+  }
+
+  if (error) {
+    return <ProductStatus error={error} />;
+  }
 
   return (
     <div className="shopping-cart-page">

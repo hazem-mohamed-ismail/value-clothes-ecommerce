@@ -3,12 +3,24 @@ import ProductCard from "../../components/common/ProductCard/ProductCard";
 import { Link } from "react-router-dom";
 import { useWishlist } from "../../context/WishlistSystem";
 import { useProductContext } from "../../context/ProductFromApi";
+import ProductStatus from "../../components/common/ProductStatus/ProductStatus";
 import "./Wishlist.css";
 
 function Wishlist() {
   const { wishlistItems } = useWishlist();
-  const products = useProductContext();
-  const wishlistProducts = products.filter((product) =>
+  const { productsData = [], loading, error } = useProductContext() || {};
+
+  if (loading) {
+    return (
+      <ProductStatus loading={loading} />
+    );
+  }
+
+  if (error) {
+    return <ProductStatus error={error} />;
+  }
+
+  const wishlistProducts = productsData.filter((product) =>
     wishlistItems.includes(product.id),
   );
 
