@@ -1,0 +1,98 @@
+.top-bar {
+  background: black;
+  color: white;
+  padding: 8px 0;
+}
+
+/* Keeps the offer bar at a readable width */
+.top-bar-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.top-bar .container {
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+.top-bar .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.top-bar .swiper {
+  width: 100% !important;
+  --swiper-navigation-size: 14px;
+}
+
+.top-bar .top-bar-swiper {
+  width: 100%;
+}
+
+/* Keeps the announcement on one line */
+.top-bar p,
+.top-bar span {
+  margin: 0;
+  font-size: 14px; 
+  text-align: center;
+  white-space: nowrap;
+}
+
+.top-bar .swiper-button-prev,
+.top-bar .swiper-button-next {
+  color: white;
+  transition: 0.3s;
+}
+
+.top-bar .swiper-button-prev:hover,
+.top-bar .swiper-button-next:hover {
+  color: rgb(251, 63, 38);
+}
+
+.top-bar .swiper-button-next::after,
+.top-bar .swiper-button-prev::after {
+  font-size: 14px !important;
+}
+
+/* Reduces side spacing on small screens */
+@media (max-width: 768px) {
+  .top-bar-wrapper {
+    max-width: 100%;
+    padding: 0 35px;
+  }
+
+  .top-bar p,
+  .top-bar span {
+    font-size: 12px;
+  }
+}
+
+/* Handles very small mobile screens */
+@media (max-width: 480px) {
+  .top-bar-wrapper {
+    padding: 0 15px;
+  }
+  
+  /* Hides the arrows to leave room for the announcement */
+  .top-bar .swiper-button-prev,
+  .top-bar .swiper-button-next {
+    display: none;
+  }
+
+  .top-bar p,
+  .top-bar span {
+    font-size: 11px;
+    white-space: normal;
+  }
+}
+
+.fa-badge-percent {
+  color: yellowgreen;
+}

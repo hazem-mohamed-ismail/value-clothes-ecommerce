@@ -1,0 +1,16 @@
+.shopping-cart-page {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.shopping-cart-page .container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.expiry-banner {
+  background-color: #FDF0ED;
+  color: #D9534F;
+  border-radius: 8px;
+  font-size: 14.4px;
+}

@@ -1,0 +1,158 @@
+/* Center the invoice without letting it stretch across the viewport */
+
+/* Keep the printable invoice at a comfortable reading width */
+.invoice-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #000000;
+}
+
+/* Header spacing leaves room for the invoice identity */
+.invoice-header-section {
+  margin-bottom: 90px;
+}
+
+.invoice-logo {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* Invoice number and download action share this row */
+.invoice-sub-header {
+  margin-bottom: 50px;
+}
+
+.invoice-number {
+  font-size: 35.2px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.btn-download {
+  font-size: 14.4px;
+  font-weight: 600;
+  background-color: #0d0d0d !important;
+  border: none;
+  padding: 12px 32px !important;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: #2e2e2e !important;
+}
+
+/* Metadata columns are separated by light vertical rules */
+.meta-section {
+  margin-bottom: 60px;
+}
+
+.meta-col {
+  border-right: 1px solid #e2e2e2;
+  padding: 0 30px !important;
+  min-height: 110px;
+}
+
+/* Aligns the first column with the table edge */
+.meta-section .meta-col:first-child {
+  padding-left: 0 !important;
+}
+
+.meta-title {
+  font-size: 19.2px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 18px;
+}
+
+.meta-value {
+  font-size: 16px;
+  color: #111111;
+  line-height: 1.5;
+}
+
+.address-text {
+  font-size: 15.2px;
+  color: #555555 !important;
+}
+
+/* Styles the invoice items table */
+.table-container {
+  margin-bottom: 70px;
+}
+
+.invoice-table {
+  border-collapse: collapse;
+}
+
+.invoice-table Scoped thead {
+  border: none;
+}
+
+/* Styles the invoice header background and vertical spacing */
+.invoice-table th {
+  background-color: #f7f5f3 !important;
+  font-weight: 600;
+  font-size: 16.8px;
+  color: #000000;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  border: none !important;
+}
+
+/* Styles the table cells and their vertical spacing */
+.invoice-table td {
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+  font-size: 16.8px;
+  color: #333333;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* Styles the final total row */
+.invoice-table tbody tr.total-due-row td {
+  border-bottom: none !important;
+  padding-top: 35px !important;
+}
+
+.invoice-table tbody tr.total-due-row .text-danger {
+  color: #df5454 !important;
+  font-weight: 700;
+}
+
+/* Styles the spaced invoice footer */
+.invoice-footer {
+  border-top: 1px solid #eeeeee;
+  padding-top: 40px;
+  font-size: 16.8px;
+}
+
+.invoice-footer span,
+.invoice-footer a {
+  color: #111111;
+  text-decoration: none;
+}
+
+.invoice-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Adjusts the invoice layout on small screens */
+@media (max-width: 768px) {
+  .meta-col {
+    border-right: none;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 20px 0 !important;
+    min-height: auto;
+  }
+  .meta-section .meta-col:first-child {
+    padding-top: 0 !important;
+  }
+  .invoice-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px !important;
+  }
+}

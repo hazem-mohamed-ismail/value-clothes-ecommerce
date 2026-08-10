@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "img": "src/assets/shared/slider-1.jpg",
+    "title": "Discover a New Level of Timeless Style",
+    "desc": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  },
+  {
+    "id": 2,
+    "img": "src/assets/shared/slider-2.jpg",
+    "title": "Define Your Style through Elegant Simplicity",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 3,
+    "img": "src/assets/shared/slider-3.jpg",
+    "title": "Discover a New Level of Timeless Style",
+    "desc": "Praesent commodo cursus magna, vel scelerisque nisl consectetur."
+  }
+]

@@ -1,0 +1,102 @@
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Bootstrap adds these shadows by default but the design here is flat */
+/* Keep the focus state dark and simple */
+.form-control:focus {
+    border-color: #0d0d0d !important;
+    box-shadow: none !important;
+}
+
+/* Cards should stay flat */
+.card {
+  box-shadow: none !important;
+}
+
+/* Same thing for all Bootstrap button styles */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-info,
+.btn-light,
+.btn-dark {
+  box-shadow: none !important;
+}
+
+/* No shadow on dropdowns either */
+.dropdown-menu {
+  box-shadow: none !important;
+}
+
+/* Remove the shadow around the modal */
+.modal-dialog {
+  box-shadow: none !important;
+}
+
+/* Or on the modal content */
+.modal-content {
+  box-shadow: none !important;
+}
+
+/* Keep the fixed navbar from looking raised */
+.navbar {
+  box-shadow: none !important;
+}
+
+/* In case a Bootstrap shadow utility gets added to an element later */
+.shadow,
+.shadow-sm,
+.shadow-lg,
+.shadow-none {
+  box-shadow: none !important;
+}
+
+/* Tables use the same flat style */
+.table {
+  box-shadow: none !important;
+}
+
+/* Tooltips do not need a shadow here */
+.tooltip {
+  box-shadow: none !important;
+}
+
+/* Grouped inputs should have the same focus style as normal inputs */
+.input-group .form-control:focus,
+.input-group .form-select:focus {
+  box-shadow: none !important;
+}
+
+/* Bootstrap adds a small shadow to checked/focused inputs so remove it */
+.form-check-input{
+  box-shadow: none !important;
+}
+
+
+.btn-close{
+  box-shadow: none !important;
+}

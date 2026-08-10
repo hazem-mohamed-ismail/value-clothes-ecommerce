@@ -1,0 +1,102 @@
+.message-form-container {
+  width: 100%;
+}
+
+.message-form-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.message-form-subtitle {
+  color: #6c757d;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.message-input,
+.message-textarea {
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+  padding: 20px 22px;
+  font-size: 15px;
+  color: #495057;
+}
+
+.message-input::placeholder,
+.message-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.message-textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.message-form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 34px;
+}
+
+.message-form-checkbox .form-check-input {
+  width: 20px;
+  height: 20px;
+}
+
+.message-form-checkbox .form-check-label {
+  margin-bottom: 0;
+  color: #4b5563;
+}
+
+.message-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 60px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.message-submit-button:disabled {
+  background-color: #bbbbbb !important;
+  color: #ffffff !important;
+  cursor: not-allowed;
+}
+
+.message-submit-button:hover:not(:disabled) {
+  background-color: #2e2e2e;
+}
+
+@media (max-width: 768px) {
+  .message-form-title {
+    font-size: 32px;
+  }
+
+  .message-input,
+  .message-textarea {
+    padding: 16px 18px;
+  }
+
+  .message-submit-button {
+    width: 100%;
+  }
+}
+
+
+.alert-danger{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}

@@ -1,0 +1,48 @@
+
+.map{
+    height: 550px;
+}
+
+/* On small screens the contact content needs a little less spacing */
+@media (max-width: 768px) {
+  .contact-header {
+    padding: 40px 16px;
+  }
+  
+  .contact-title {
+    font-size: 32px;
+  }
+  
+  .contact-description {
+    font-size: 14px;
+  }
+}
+
+/* Keep the text blocks from becoming wider than the map and form */
+.contact-text-max {
+  max-width: 380px;
+}
+
+.contact-address-max {
+  max-width: 350px;
+}
+
+/* Keeps weekday labels aligned with the opening hours */
+.time-label-width {
+  width: 90px;
+}
+
+/* Sets the size of the bottom checkbox text */
+.label-font-size {
+  font-size: 15px;
+}
+
+/* Styles the rounded submit button */
+.contact-submit-btn {
+  border-radius: 50px !important;
+  padding: 12px 35px !important;
+}
+/* Removed global form/input overrides to avoid interfering
+   with Bootstrap/global styles. If you want page-scoped
+   overrides, add a parent class (e.g. `.contact-page`) and
+   target inputs under it. */

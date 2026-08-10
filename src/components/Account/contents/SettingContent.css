@@ -1,0 +1,131 @@
+.account-settings {
+  width: 100%;
+}
+
+.account-section-title {
+  color: #1f1f1f;
+  font-size: 29.6px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.settings-form-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20.8px;
+  padding: 32px;
+}
+
+.settings-section-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin-bottom: 20px;
+}
+
+.settings-avatar {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fcebea;
+  color: #dc4646;
+}
+
+.account-settings .form-control {
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 16px;
+  padding: 16px 16px;
+  background: #fbfbfb;
+}
+
+.account-settings .form-control:focus {
+  border-color: #333;
+}
+
+.form-label,
+.settings-form-card .form-label {
+  font-size: 15.2px;
+  font-weight: 600;
+  color: #1b1b1b;
+}
+
+.settings-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 15.2px 35.2px;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 53.6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.settings-submit-btn.btn-dark {
+  background-color: #111;
+  color: #fff;
+}
+
+.settings-submit-btn:disabled {
+  background: #bbbbbb !important;
+  border-color: #bbbbbb !important;
+  color: #fff !important;
+  cursor: not-allowed;
+}
+
+.settings-submit-btn:hover:not(:disabled) {
+  background-color: #2e2e2e;
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-input-wrapper .form-control {
+  padding-right: 46px;
+}
+
+.password-eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8a8a8a;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.password-eye-icon:hover {
+  color: #111;
+}
+
+.address-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 14.4px 28.8px;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 48px;
+  transition: background-color 0.2s ease;
+  margin-top: 9.6px;
+}
+
+@media (max-width: 767.98px) {
+  .settings-form-card {
+    padding: 16px !important;
+  }
+
+  .settings-submit-btn {
+    width: 100%;
+  }
+}

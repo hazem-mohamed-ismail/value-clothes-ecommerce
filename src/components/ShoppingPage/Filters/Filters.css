@@ -1,0 +1,339 @@
+.filters-panel {
+  background: transparent;
+  border-radius: 0;
+  padding: 0 18px;
+  max-width: 340px;
+  border: none;
+}
+
+
+.filters-header {
+  margin-bottom: 16px;
+}
+
+.filters-header h2 {
+  font-size: 26px;
+  margin: 0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.filter-section {
+  padding: 12px 0;
+  border: none;
+}
+
+.filter-section-title {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.filter-title {
+  font-weight: 600 !important;
+  color: #0f172a;
+}
+
+.filter-arrow {
+  font-size: 14px;
+  color: #111827;
+}
+
+.checkbox-list,
+.color-list,
+.filter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 6px;
+}
+
+.checkbox-list li,
+.color-list li,
+.filter-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.checkbox-list label,
+.checkbox-list label span,
+.color-list li span,
+.filter-list li span {
+  font-size: 14px;
+  color: #111827;
+}
+
+.checkbox-list input {
+  width: 18px;
+  height: 18px;
+  accent-color: #111827;
+}
+
+.color-list li {
+  gap: 12px;
+}
+
+.color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  outline: 1px solid rgb(72, 72, 72);
+  outline-offset: 2px;
+}
+
+
+.price-inputs {
+  margin-top: 18px;
+}
+
+.price-inputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: #475569;
+}
+
+.price-inputs input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #f8fafc;
+  color: #111827;
+}
+
+/* Styles the product category list */
+.filter-list li {
+  padding: 12px 0;
+  border-top: 1px solid #eef2f6;
+  color: #111827;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-list li span {
+  transition: color 0.3s ease;
+}
+
+.filter-list li:hover span {
+  color: #dc4646;
+}
+
+.filter-list .item-count {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Adjusts the MUI price slider */
+.MuiSlider-root{
+  height: 1px !important;
+  color: black !important;
+  width: 100%;
+}
+
+.MuiSlider-thumb{
+  height: 16px !important;
+  width: 16px !important;
+  background-color: #fff !important;
+  border: 2px solid black !important;
+}
+
+/* Styles the minimum and maximum price fields */
+.price-slider-placeholder {
+  position: relative;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.price-slider-track {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  top: 0;
+  bottom: 0;
+  background: #111827;
+  border-radius: 999px;
+}
+
+.price-slider-handle {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.price-slider-handle.left {
+  left: 16%;
+}
+
+.price-slider-handle.right {
+  left: 84%;
+}
+
+.price-inputs {
+  margin-top: 18px;
+}
+
+.price-inputs .mb-3 {
+  margin-bottom: 0;
+}
+
+.price-inputs .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.price-inputs .form-control {
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  min-height: 52px;
+  padding: 14px 18px;
+}
+
+/* --- Size rules --- */
+.size-options {
+  gap: 10px;
+}
+
+.size-chip {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 999px;
+  padding: 10px 18px;
+  min-height: 44px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  min-width: 60px;
+}
+
+.size-chip:hover,
+.size-chip:focus {
+  border-color: #111827;
+  background: #f8fafc;
+  color: #111827;
+}
+
+.size-chip:active {
+  border-color: #111827;
+  background: #f1f5f9;
+}
+
+/* --- Colors specific rules --- */
+.color-list {
+  margin: 0;
+  padding: 0 6px;
+  list-style: none;
+}
+
+.color-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #eef2f6;
+}
+
+.color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.color-dot.beige { background: #f7ecd7; }
+.color-dot.blue { background: #111827; }
+.color-dot.brown { background: #8f6c42; }
+.color-dot.darkblue { background: #1f2937; }
+.color-dot.light { background: #c6c9b6; }
+.color-dot.pink { background: #f7d0d7; }
+.color-dot.various { background: #94a3b8; }
+.color-dot.warmbrown { background: #b7a685; }
+.color-dot.white { background: #ffffff; border-color: #d1d5db; }
+
+.color-dot.color-beige { background: #f7ecd7; }
+.color-dot.color-blue { background: #111827; }
+.color-dot.color-brown { background: #8f6c42; }
+.color-dot.color-darkblue { background: #1f2937; }
+.color-dot.color-light { background: #c6c9b6; }
+.color-dot.color-pink { background: #f7d0d7; }
+.color-dot.color-various { background: #94a3b8; }
+.color-dot.color-warmbrown { background: #b7a685; }
+.color-dot.color-white { background: #ffffff; border-color: #d1d5db; }
+
+.accordion-color-preview {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.accordion-color-preview .color-dot {
+  width: 12px;
+  height: 12px;
+  border-width: 1px;
+}
+
+.color-list span {
+  color: #111827;
+  font-size: 14px;
+}
+
+.color-list .item-count {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* --- Availability & Brands (shared checkbox list rules) --- */
+.checkbox-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.checkbox-list li:last-child {
+  margin-bottom: 0;
+}
+
+.checkbox-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #111827;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkbox-list input {
+  width: 18px;
+  height: 18px;
+  accent-color: #111827;
+}
+
+.item-count {
+  color: #94a3b8;
+  font-size: 13px;
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Style in Motion",
+    "src": "src/assets/home/infinite-banner/cls-1.jpg",
+    "alt": "Style in Motion"
+  },
+  {
+    "id": 2,
+    "title": "Own Your Look",
+    "src": "src/assets/home/infinite-banner/cls-2.jpg",
+    "alt": "Own Your Look"
+  },
+  {
+    "id": 3,
+    "title": "Chic by Nature",
+    "src": "src/assets/home/infinite-banner/cls-3.jpg",
+    "alt": "Chic by Nature"
+  },
+  {
+    "id": 4,
+    "title": "Confidence in Every Step",
+    "src": "src/assets/home/infinite-banner/cls-4.jpg",
+    "alt": "Confidence in Every Step"
+  },
+  {
+    "id": 5,
+    "title": "Express Yourself",
+    "src": "src/assets/home/infinite-banner/cls-5.jpg",
+    "alt": "Express Yourself"
+  }
+]

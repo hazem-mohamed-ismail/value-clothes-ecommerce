@@ -1,0 +1,136 @@
+.checkout-cart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 16px;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+}
+
+.cart-item-image-wrapper {
+  width: 110px;
+  height: 120px;
+  background-color: #eaeaea;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cart-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.cart-item-title {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.cart-item-color {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  color: #717171;
+}
+
+.cart-item-color .color-value {
+  color: #1a1a1a;
+}
+
+.cart-item-quantity-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e2e2e2;
+  border-radius: 30px;
+  padding: 8px 18px;
+  width: 140px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  transition: 0.3s color;
+}
+.cart-item-quantity-pill button{
+
+  transition: 0.2s color;
+}
+
+.cart-item-quantity-pill button:hover{
+    color: #e55353;
+}
+
+.quantity-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #1a1a1a;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-value {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.cart-item-remove-btn {
+  background: none;
+  border: none;
+  color: #e55353;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.cart-item-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e55353;
+  margin-left: auto;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+/* Adjusts the item layout on smaller screens */
+@media (max-width: 576px) {
+  .checkout-cart-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cart-item-image-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+
+  .cart-item-price {
+    margin-left: 0;
+    font-size: 20px;
+    margin-top: 8px;
+  }
+}

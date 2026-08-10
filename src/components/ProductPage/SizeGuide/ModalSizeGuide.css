@@ -1,0 +1,41 @@
+/* Keep the measurement table light and easy to scan */
+.table th,
+.table td {
+    border-bottom: 1px solid #f1f1f1 !important;
+}
+
+.table thead tr {
+    border-bottom: 1px solid #eaeaea !important;
+}
+
+/* The modal is the outer frame so remove the table's extra border */
+.table {
+    border-collapse: collapse;
+}
+
+/* Hides the scrollbar inside the modal */
+.modal-body {
+    overflow-y: hidden !important;
+}
+
+#sizeChartModal .modal-dialog {
+    max-height: 90vh;
+}
+
+/* Removes the default focus outline from the close button */
+
+.btn-close{
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+    color: #d94646 !important;
+}
+
+
+/* Sets the muted color for side text */
+.text-muted {
+    color: #6c757d !important;
+}

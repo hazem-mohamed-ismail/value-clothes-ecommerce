@@ -1,0 +1,53 @@
+/* Center the empty-state content on the page */
+
+/* Keep the illustration from becoming blurry or oversized */
+.not-found-img {
+    max-width: 100%;
+    width: 650px;
+}
+
+/* Make the 404 message the visual focus */
+.not-found-title {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Styles the helper text below the error message */
+.not-found-text {
+    font-size: 15.2px;
+    color: #6c757d;
+}
+
+/* Styles the main dark button */
+.btn-dark-custom {
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid #111111;
+    border-radius: 50px;
+    font-size: 14.4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-dark-custom:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Styles the secondary outline button */
+.btn-outline-custom {
+    background-color: transparent;
+    color: #111111;
+    border: 1px solid #cccccc;
+    border-radius: 50px;
+    font-size: 14.4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: #f8f9fa;
+    border-color: #111111;
+    color: #111111;
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Annette Black",
+    "role": "Founder/CEO",
+    "image": "src/assets/about-us/member/member-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Brooklyn Simmons",
+    "role": "Manager",
+    "image": "src/assets/about-us/member/member-2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Jane Cooper",
+    "role": "Sales Director",
+    "image": "src/assets/about-us/member/member-4.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Lisa Bonet",
+    "role": "Sales Director",
+    "image": "src/assets/about-us/member/member-3.jpg"
+  }
+]

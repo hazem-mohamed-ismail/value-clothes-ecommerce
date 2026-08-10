@@ -1,0 +1,212 @@
+/* Styles the product page layout and spacing */
+.shopping-page {
+  padding: 10px 0 80px;
+}
+
+.shopping-page-aside {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
+
+.shopping-page-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.shopping-page-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #ffffff;
+}
+
+.toolbar-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #475569;
+  font-size: 14px;
+}
+
+/* Styles the buttons that change the product grid */
+.toolbar-layout-picker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.layout-picker-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: rgba(128, 128, 128, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.layout-picker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-picker-icon span {
+  background-color: #000000;
+  border-radius: 1px;
+  display: inline-block;
+  transition: background-color 180ms ease, opacity 180ms ease;
+  will-change: opacity, background-color;
+}
+
+.layout-picker-btn:hover {
+  background-color: #000000;
+}
+.layout-picker-btn:hover .layout-picker-icon span {
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+.btn-cols-2 .layout-picker-icon span,
+.btn-cols-3 .layout-picker-icon span,
+.btn-cols-4 .layout-picker-icon span {
+  transition: background-color 180ms ease, opacity 180ms ease;
+}
+
+.btn-list .layout-picker-icon {
+  flex-direction: column;
+  gap: 3px;
+}
+.btn-list .layout-picker-icon span {
+  width: 16px;
+  height: 3px;
+}
+
+.btn-cols-2 .layout-picker-icon,
+.btn-cols-3 .layout-picker-icon,
+.btn-cols-4 .layout-picker-icon {
+  flex-direction: row;
+  gap: 2.5px;
+}
+.btn-cols-2 .layout-picker-icon span,
+.btn-cols-3 .layout-picker-icon span,
+.btn-cols-4 .layout-picker-icon span {
+  width: 3px;
+  height: 14px;
+}
+
+.layout-picker-btn.active {
+  background-color: #000000;
+}
+.layout-picker-btn.active .layout-picker-icon span {
+  background-color: #ffffff;
+}
+
+.display-products {
+  color: #475569;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+/* Styles the product cards inside the grid */
+.sort-label {
+  margin-right: 10px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.sort-select {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e6e8ec;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 260px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-image {
+  height: 180px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.product-card-tag {
+  color: #2563eb;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.product-card-content h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.product-card-price {
+  color: #0f172a;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+  Small screen layout rules
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .shopping-page-aside {
+    display: none;
+  }
+
+  .toolbar-info {
+    display: none;
+  }
+
+  .mobile-filters-button {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-filters-button {
+    display: none;
+  }
+}

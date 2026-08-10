@@ -1,0 +1,32 @@
+
+.account-page-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.account-sidebar {
+  width: 260px;
+}
+.account-content {
+  flex: 1;
+}
+
+.account-content > .card,
+.account-content > .p-3 {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+@media (max-width: 991.98px) {
+  .account-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .account-page-layout {
+    flex-direction: column;
+  }
+}

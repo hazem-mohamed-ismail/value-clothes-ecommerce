@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction",
+    "content": "Welcome to Amerce Store, your premier destination for fashion-forward clothing accessories. We pride ourselves on offering a curated selection of rare beautiful items sourced both locally and globally. Our mission is to bring you the latest trends & timeless styles, ensuring every piece reflects quality and elegance.",
+    "expand": true
+  },
+  {
+    "id": 2,
+    "title": "Our Vision",
+    "content": "Welcome to Amerce Store, your premier destination for fashion-forward clothing accessories. We pride ourselves on offering a curated selection of rare beautiful items sourced both locally and globally. Our mission is to bring you the latest trends & timeless styles, ensuring every piece reflects quality and elegance.",
+    "expand": false
+  },
+  {
+    "id": 3,
+    "title": "What Sets Us Apart",
+    "content": "Welcome to Amerce Store, your premier destination for fashion-forward clothing accessories. We pride ourselves on offering a curated selection of rare beautiful items sourced both locally and globally. Our mission is to bring you the latest trends & timeless styles, ensuring every piece reflects quality and elegance.",
+    "expand": false
+  },
+  {
+    "id": 4,
+    "title": "Our Commitment",
+    "content": "Welcome to Amerce Store, your premier destination for fashion-forward clothing accessories. We pride ourselves on offering a curated selection of rare beautiful items sourced both locally and globally. Our mission is to bring you the latest trends & timeless styles, ensuring every piece reflects quality and elegance.",
+    "expand": false
+  }
+]

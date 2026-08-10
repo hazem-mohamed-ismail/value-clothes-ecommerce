@@ -1,0 +1,235 @@
+/* Styles the complete article content */
+.blog-content-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Styles the article title and metadata */
+.blog-header-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blog-badge {
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+.blog-main-title {
+  font-size: 34px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: #111111;
+}
+
+.blog-meta {
+  font-size: 15px;
+  color: #777777;
+}
+
+.meta-item {
+  margin: 0 10px;
+}
+
+.meta-icon {
+  margin-right: 6px;
+  color: #888888;
+  font-size: 14px;
+}
+
+/* Styles the article text and inner headings */
+.blog-paragraph {
+  font-size: 15px;
+  color: #555555;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.blog-sub-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 40px 0 15px 0;
+  color: #111111;
+}
+
+.blog-divider {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  margin: 40px 0 20px 0;
+}
+
+/* Styles the article image gallery */
+.blog-image-gallery {
+  margin-bottom: 30px;
+}
+
+
+.gallery-img {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* Styles the tags and share links below the article */
+.blog-footer-section {
+  margin-top: 20px;
+}
+
+.blog-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tags-label {
+  font-size: 15px;
+  color: #777777;
+  font-weight: bold;
+}
+
+.tag-item {
+  background-color: #f5f5f5;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* Styles the share buttons */
+.blog-share {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.share-label {
+  font-size: 15px;
+  color: #777777;
+}
+
+.share-icons {
+  display: flex;
+  gap: 8px;
+}
+
+/* Styles the light circles around social icons */
+.icon-circle {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+/* Styles the icon inside each circle */
+.icon-circle i {
+  font-size: 14px;
+  color: #555555;
+  transition: color 0.2s;
+}
+
+/* Changes the icon circle on hover */
+.icon-circle:hover {
+  background-color: #dc4646;
+  color: #fff;
+
+}
+
+.icon-circle:hover i {
+  color: #fff;
+  /* Darkens the icon on hover */
+}
+
+@media (max-width: 992px) {
+  .blog-content-container {
+    width: 100%;
+    padding: 32px 18px;
+  }
+
+  .blog-main-title {
+    font-size: 28px;
+  }
+
+  .blog-sub-title {
+    font-size: 20px;
+  }
+
+  .blog-paragraph,
+  .blog-meta,
+  .meta-icon,
+  .tags-label,
+  .share-label {
+    font-size: 14px;
+  }
+
+  .blog-badge {
+    padding: 4px 12px;
+  }
+
+  .tag-item {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .icon-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .icon-circle i {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-content-container {
+    padding: 24px 16px;
+  }
+
+  .blog-main-title {
+    font-size: 24px;
+  }
+
+  .blog-sub-title {
+    font-size: 18px;
+  }
+
+  .blog-paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .blog-divider {
+    margin: 32px 0 18px 0;
+  }
+
+  .gallery-img {
+    height: 240px;
+  }
+
+  .blog-tags {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .share-icons {
+    gap: 6px;
+  }
+}

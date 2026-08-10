@@ -1,0 +1,94 @@
+/* Team styles that are not covered by Bootstrap */
+
+/* Keep every team photo in the same frame */
+
+.meet-team-h {
+  font-size: 36px;
+  font-weight: 700;
+  opacity: 0.95;
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.meet-team-h::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100px;
+  background-color: rgb(129, 129, 129);
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 0;
+  border-radius: 5px;
+}
+
+.meet-team-p {
+  font-size: 18px;
+  color: rgb(111, 111, 111);
+}
+
+.custom-image-container {
+  width: 100%;
+}
+
+.custom-team-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: 1s ease-in-out;
+}
+
+.team-card:hover .custom-team-image {
+  transform: scale(1.1);
+}
+
+/* Reveal the social links on hover and keep them usable on smaller screens */
+
+.social-hover-menu {
+  top: 15px;
+  right: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+/* Shows the social icons when the card is hovered */
+.team-card:hover .social-hover-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+@media (max-width:992px) {
+    .social-hover-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+}
+
+/* Styles the round social links */
+.social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.05);
+}

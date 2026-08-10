@@ -1,0 +1,35 @@
+.wishlist-empty {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wishlist-empty h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.wishlist-empty p {
+  font-size: 16px;
+  color: #606060;
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+.wishlist-button {
+  padding: 15.2px 32px;
+  border: none;
+  border-radius: 999px;
+  background: #e03e3e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.wishlist-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}

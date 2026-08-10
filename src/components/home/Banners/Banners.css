@@ -1,0 +1,67 @@
+.banner-item img {
+  cursor: pointer;
+}
+
+.infinite-banner {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+
+.infinite-banner-item {
+    margin: 0 10px;
+}
+
+
+.cls-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 5px 22px;
+  text-decoration: none;
+  color: #000000b4;
+}
+
+.cls-wrap h4 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.img-cls {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  flex-shrink: 0;
+}
+
+.img-cls img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+}
+
+
+.group {
+  animation: infinite-scroll 30s linear infinite;
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

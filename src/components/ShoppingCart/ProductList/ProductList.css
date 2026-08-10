@@ -1,0 +1,86 @@
+.product-list-container {
+  background-color: #ffffff;
+}
+
+/* Give product thumbnails enough room without changing the row height */
+.product-img-wrapper {
+  width: 115px;
+  height: 115px;
+  background-color: #f1f1f1 !important;
+}
+
+/* Keep quantity controls large enough to use comfortably */
+.quantity-selector {
+  background-color: #fff;
+  height: 48px;
+  border: 1px solid #e1e1e1 !important;
+}
+
+
+
+/* Make the quantity value easy to read at a glance */
+.quantity-input {
+  width: 35px !important;
+  border: none !important;
+  background: transparent !important;
+  text-align: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-weight: 500;
+  color: #000 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-size: 17.6px;
+}
+
+/* Styles the buttons that increase and decrease quantity */
+.quantity-selector button {
+  color: #000 !important;
+  font-weight: 400;
+  font-size: 22.4px !important;
+  transition: 0.2s;
+}
+
+.quantity-selector button:hover {
+  color: #dc4646 !important;
+}
+
+/* Adds a light divider between product rows */
+.border-bottom-md {
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+/* Gives the coupon field and button enough room */
+.voucher-input {
+  width: 100%;
+  max-width: 500px;
+  height: 54px;
+  border-color: #e5e5e5 !important;
+}
+
+.apply-btn {
+  white-space: nowrap;
+  height: 54px;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+/* Keeps the coupon controls consistent on mobile */
+@media (max-width: 767.98px) {
+  .border-bottom-sm {
+    border-bottom: 1px solid #f0f0f0 !important;
+  }
+  
+  .border-bottom-sm-last {
+    border-bottom: 2px solid #f0f0f0 !important;
+    padding-bottom: 16px !important;
+  }
+  
+  .voucher-input {
+    max-width: 100%;
+  }
+}

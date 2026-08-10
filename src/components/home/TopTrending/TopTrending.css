@@ -1,0 +1,20 @@
+/* Styles the trending products */
+.top-picks {
+  margin-top: 64px;
+}
+
+.countdown-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  background-color: #f8f1f0;
+  color: #d9534f;
+  font-size: 13px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.rating{
+    color: #f8c146;
+    margin-bottom: 8px;
+}

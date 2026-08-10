@@ -1,0 +1,25 @@
+.why-us-container, 
+.custom-accordion {
+  background-color: #f7f7f7 !important;
+}
+
+.custom-accordion-details {
+  background-color: #ebebeb !important;
+  border-radius: 5px;
+}
+
+/* MUI adds its own icon motion but this component uses the simpler project style */
+.custom-accordion .MuiAccordionSummary-expandIconWrapper {
+  transition: transform 0.3s ease-in-out !important;
+}
+
+/* Let the icon rotate only when its accordion item opens */
+.custom-accordion .MuiAccordionSummary-expandIconWrapper.Mui-expanded {
+  transform: rotate(45deg) !important;
+}
+
+/* Removes extra animation from the icon itself */
+.accordion-icon {
+  transform: none !important;
+  transition: none !important;
+}

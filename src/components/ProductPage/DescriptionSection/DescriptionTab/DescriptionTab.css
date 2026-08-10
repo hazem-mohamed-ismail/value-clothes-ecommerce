@@ -1,0 +1,13 @@
+.description-panel {
+  color: #495057;
+  line-height: 1.75;
+}
+
+.description-panel ul {
+  padding-left: 20px;
+  margin-top: 16px;
+}
+
+.description-panel li {
+  margin-bottom: 8px;
+}

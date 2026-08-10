@@ -1,0 +1,134 @@
+/* Styles the subscription and special offer modal */
+
+.modal-container-custom {
+  width: 100%;
+  max-width: 700px; 
+  border-radius: 15px !important;
+  overflow: hidden;
+  border: none;
+}
+
+.modal-content-side {
+  background-color: #ffffff;
+}
+
+.modal-image-side {
+  height: 200px; 
+}
+
+.modal-image-side img {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+
+  .modal-container-custom{
+    transform: translateY(-50px);
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .modal-image-side {
+    height: 380px;
+  }
+
+}
+
+/* Styles the modal close button */
+
+.btn-close-custom {
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  border: none;
+  color: #374151;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-close-custom svg {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.btn-close-custom:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-close-custom:hover svg {
+  transform: rotate(180deg);
+}
+
+/* Styles the modal title and content */
+
+.modal-subtitle {
+  font-size: 17px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.modal-title-discount {
+  font-size: 45px;
+  font-weight: 600;
+  color: #E24A4A; 
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .modal-title-discount {
+    font-size: 54px;
+  }
+}
+
+.modal-description {
+  font-size: 13px;
+  color: #6b7280;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+.modal-footer-text {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* Styles the email field and signup button */
+
+.modal-input-field {
+  padding: 11px 115px 11px 18px !important; 
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+  box-shadow: none !important;
+}
+
+.modal-input-field:focus {
+  border-color: #111111;
+}
+
+.modal-submit-btn {
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  padding: 0 18px !important;
+  background-color: #111111 !important;
+  border: none !important;
+  font-size: 11px;
+  font-weight: 500;
+  height: calc(100% - 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-submit-btn:hover {
+  background-color: #000000 !important;
+}

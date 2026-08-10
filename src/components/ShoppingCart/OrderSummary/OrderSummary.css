@@ -1,0 +1,26 @@
+.order-summary-card {
+  background-color: #F4F4F4;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  border-radius: 16px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.checkout-btn {
+  background-color: #111 !important;
+  border: none !important;
+}
+
+.checkout-btn:hover {
+  background-color: #222 !important;
+}
+
+.continue-btn {
+  text-decoration: underline;
+  color: #000 !important;
+}

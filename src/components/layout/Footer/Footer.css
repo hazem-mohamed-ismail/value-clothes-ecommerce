@@ -1,0 +1,165 @@
+/* Styles the footer content and links */
+.custom-footer {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: sans-serif;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-logo {
+  font-weight: 700;
+  font-size: 32px;
+  color: #000000;
+}
+
+.footer-heading {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #000000;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a,
+.maps-link,
+.small-text a {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.maps-link:hover,
+.small-text a:hover {
+  color: #dc4646;
+}
+
+.maps-link {
+  color: #dc3545;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #eaeaea;
+  border-radius: 50%;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.social-icon:hover {
+  color: #fff;
+  background-color: #dc4646;
+  border-color: #dc4646;
+}
+
+/* Styles the newsletter signup form */
+
+.input-group-custom {
+  position: relative;
+  display: block;
+  border: none;
+  background: transparent;
+  padding: 0;
+  overflow: visible;
+}
+
+.newsletter-input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  padding: 12px 56px 12px 18px;
+  border: 1px solid #ececec !important;
+  border-radius: 999px !important;
+  background-color: #fff !important;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.newsletter-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: #dc4646;
+}
+
+.newsletter-input::placeholder {
+  color: #9ca3af;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #d1d5db !important;
+}
+
+.newsletter-btn i {
+  display: inline-block;
+  transform: rotate(-45deg);
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.newsletter-btn:hover i {
+  transform: rotate(0deg);
+}
+
+.small-text {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* Styles the currency selector and payment methods */
+.select-custom {
+  cursor: pointer;
+}
+
+.form-select {
+  width: 140px !important;
+  height: 35px !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px;
+}
+
+.payment-badge {
+  display: inline-block;
+  border-radius: 4px;
+  height: 24px;
+  width: 38px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+.payment-badge img {
+  object-fit: contain;
+}

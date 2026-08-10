@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "image": "/src/assets/shared/slider-1.jpg",
+    "date": "13 August",
+    "title": "How to Build a Capsule Wardrobe That Fits Your Lifestyle",
+    "description": "Learn the art of mixing timeless basics with statement pieces for effortless, everyday style."
+  },
+  {
+    "id": 2,
+    "image": "/src/assets/shared/slider-2.jpg",
+    "date": "15 August",
+    "title": "The Secret to Effortless Elegance in Every Season",
+    "description": "Discover key layering techniques and fabric choices that keep you chic year-round."
+  },
+  {
+    "id": 3,
+    "image": "/src/assets/shared/slider-3.jpg",
+    "date": "18 August",
+    "title": "Why Accessories Define More Than Just Your Outfit",
+    "description": "Explore how small details like jewelry and bags can transform your entire look."
+  },
+  {
+    "id": 4,
+    "image": "/src/assets/blog/pic1.png",
+    "date": "19 August",
+    "title": "From Work to Weekend: Outfits That Do It All",
+    "description": "Find versatile looks that transition seamlessly from office hours to after-hours fun."
+  },
+  {
+    "id": 5,
+    "image": "/src/assets/blog/pic2.png",
+    "date": "15 August",
+    "title": "The Art of Layering for Every Occasion",
+    "description": "Master the techniques that make layering effortless and stylish."
+  },
+  {
+    "id": 6,
+    "image": "/src/assets/blog/pic3.png",
+    "date": "19 August",
+    "title": "Sustainable Fashion: Quality Over Quantity",
+    "description": "Learn how investing in quality pieces creates a more sustainable wardrobe."
+  },
+  {
+    "id": 7,
+    "image": "/src/assets/home/model-1.jpg",
+    "date": "22 August",
+    "title": "Mixing Textures for a Rich, Modern Look",
+    "description": "Learn the easiest ways to pair textures for depth and style in your everyday outfits."
+  },
+  {
+    "id": 8,
+    "image": "/src/assets/home/model-2.jpg",
+    "date": "23 August",
+    "title": "Day-to-Night Dressing Without the Stress",
+    "description": "Find outfit formulas that keep you polished from meetings to evenings out."
+  },
+  {
+    "id": 9,
+    "image": "/src/assets/products/product-1.jpg",
+    "date": "24 August",
+    "title": "Color Pairing Tips for a Balanced Closet",
+    "description": "Create easy yet sophisticated combinations with color guidance for every wardrobe."
+  },
+  {
+    "id": 10,
+    "image": "/src/assets/home/home-modal.jpg",
+    "date": "25 August",
+    "title": "Comfort and Confidence: Shoes That Elevate Any Outfit",
+    "description": "Explore footwear options that look great and feel comfortable all day long."
+  },
+  {
+    "id": 11,
+    "image": "/src/assets/products/product-2.jpg",
+    "date": "26 August",
+    "title": "Seasonal Staples: Must-Have Pieces for Your Closet",
+    "description": "Keep your wardrobe fresh with essential items that work for any season."
+  }
+]

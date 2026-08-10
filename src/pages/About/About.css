@@ -1,0 +1,64 @@
+.planning-img {
+  height: 80vh;
+}
+
+
+/* Intro area with the image first and the short brand story after it */
+.main-title {
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.lead-text {
+  font-size: 18px !important;
+  line-height: 1.6;
+  color: #333333;
+}
+
+@media (max-width: 992px) {
+  .planning-img {
+    height: 30vh;
+  }
+  .main-title {
+    font-family: sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+  }
+}
+/* Keep the four store numbers consistent and easy to compare */
+.stat-number {
+  font-size: 56px;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 8px;
+  font-family: sans-serif;
+}
+
+.stat-title {
+  font-size: 20.8px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+.stat-desc {
+  /* 15.2px * 16 = 15.2px */
+  font-size: 15.2px;
+  color: #666666;
+  line-height: 1.5;
+  padding: 0 15px;
+}
+
+/* Adjusts spacing on smaller screens */
+@media (max-width: 768px) {
+  .lead-text {
+    padding-left: 0 !important;
+  font-size: 16px !important;
+    margin-top: 24px; /* 24px * 16 = 24px */
+  }
+  .stat-number {
+    /* 44.8px * 16 = 44.8px */
+    font-size: 44.8px;
+  }
+}

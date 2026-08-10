@@ -1,0 +1,191 @@
+/* Styles spacing and typography for the order list */
+.orders-container {
+  max-width: 1000px !important;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+}
+
+.orders-main-title {
+  font-size: 32px;
+  font-weight: 500;
+  color: #000000;
+}
+
+/* Styles the order status tabs */
+.tabs-nav {
+  border-bottom: 1px solid transparent;
+  gap: 24px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 8px 4px;
+  font-size: 17.6px;
+  color: #71717a;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: #000000;
+}
+
+.tab-btn.active {
+  color: #000000;
+  font-weight: 500;
+  background-color: #fff !important;
+}
+
+/* Marks the active tab with an underline */
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+}
+
+/* Groups each order inside one card */
+.order-card-box {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Styles the order card header */
+.order-card-header {
+  border-bottom: 1px solid #f4f4f5;
+  background-color: #ffffff;
+}
+
+.order-num-text {
+  color: #71717a;
+  font-size: 15.2px;
+}
+
+.order-num-text span {
+  color: #000000;
+  font-weight: 600;
+}
+
+.status-label {
+  color: #000000;
+  font-size: 15.2px;
+}
+
+/* Styles and colors the order status badges */
+.status-pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12.8px;
+  font-weight: 500;
+}
+
+.pill-delivery {
+  background-color: #f3f0ff;
+  color: #7952b3;
+}
+
+.pill-pending {
+  background-color: #fff9ed;
+  color: #e6a23c;
+}
+
+.pill-completed {
+  background-color: #f0fdf4;
+  color: #22c55e;
+}
+
+.pill-canceled {
+  background-color: #fff1f0;
+  color: #f5222d;
+}
+
+/* Styles the product details inside the card */
+.product-item-row {
+  border-bottom: 1px solid #f4f4f5;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* Removes the divider from the last product */
+.product-item-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.product-img-box {
+  width: 80px;
+  height: 95px;
+  background-color: #f4f4f5;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prod-name-title {
+  font-size: 16px;
+  color: #18181b;
+  font-weight: 400;
+}
+
+.prod-variant-subtitle {
+  font-size: 14.4px;
+  color: #a1a1aa;
+}
+
+.product-pricing-qty {
+  font-size: 16px;
+  color: #000000;
+}
+
+/* Styles the buttons at the bottom */
+.order-card-footer {
+  background-color: #ffffff;
+}
+
+.btn-custom {
+  padding: 10px 24px;
+  font-size: 14.4px;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-dark-custom {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.btn-dark-custom:hover {
+  background-color: #27272a;
+  border-color: #27272a;
+}
+
+.btn-outline-custom {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.btn-outline-custom:hover {
+  background-color: #f4f4f5;
+}
+

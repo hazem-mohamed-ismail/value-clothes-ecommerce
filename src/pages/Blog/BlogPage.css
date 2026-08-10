@@ -1,0 +1,31 @@
+.blog-page-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.pagination-wrapper .MuiPagination-root {
+  --PaginationItem-radius: 50%;
+}
+
+.pagination-wrapper .MuiPaginationItem-root {
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0 4px;
+  font-weight: 500;
+}
+
+.pagination-wrapper .Mui-selected {
+  background-color: #111 !important;
+  color: #fff !important;
+}
+
+.pagination-wrapper .MuiPaginationItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}

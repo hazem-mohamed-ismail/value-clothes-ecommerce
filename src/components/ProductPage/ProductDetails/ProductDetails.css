@@ -1,0 +1,87 @@
+/* Links darken slightly when they are pressed or hovered */
+.action-link {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.action-link:hover {
+  color: #000000;
+}
+
+/* Color choices use small image buttons when a product provides variants */
+.color-variant-btn {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  width: 50px;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-variant-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.color-variant-btn.active {
+  border: 2px solid #000000 !important;
+}
+
+/* Styles the size selection buttons */
+.size-selection-btn {
+  min-width: 48px;
+  height: 42px;
+  border-radius: 4px;
+  font-size: 13.6px;
+  border-color: #dee2e6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.size-selection-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: black;
+}
+
+.size-selection-btn:active {
+  background-color: #ffffff !important;
+}
+
+/* Styles the quantity selector */
+.quantity-selector {
+  height: 44px;
+  background-color: #ffffff;
+}
+
+/* Styles the red buy now button */
+.btn-buy-now {
+  background-color: #d94646 !important;
+  border: none;
+  font-size: 16px;
+}
+
+.btn-buy-now:hover {
+  background-color: #bd3a3a !important;
+}
+
+/* Styles the payment methods box */
+.secure-checkout-card {
+  background-color: #f8f9fa;
+  border: 1px solid #f1f3f5;
+}
+
+
+.size-btn {
+  transition: 0.3s;
+}
+
+.size-btn:hover{
+  color: #d94646 !important;
+
+}

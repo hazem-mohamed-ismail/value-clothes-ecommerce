@@ -1,0 +1,65 @@
+.gallery-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.gallery-main-image,
+.gallery-thumb {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+  background-color: #ffffff;
+}
+
+.gallery-main-image img,
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.gallery-thumb {
+  cursor: pointer;
+}
+
+.thumbnails-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+}
+
+.thumbnails-row .thumb-item {
+  flex: 0 0 auto;
+  width: 100px;
+}
+
+.thumbnails-row .thumb-item .gallery-thumb {
+  min-width: 100px;
+}
+
+/* Larger screens have room for a vertical thumbnail rail */
+@media (min-width: 768px) {
+  .thumbnails-row {
+    display: flex;
+    flex-direction: column;
+    overflow-x: visible;
+    overflow-y: hidden;
+    gap: 12px;
+    padding-bottom: 0;
+  }
+
+  .thumbnails-row .thumb-item {
+    width: 100%;
+  }
+
+  .thumbnails-row .thumb-item .gallery-thumb {
+    min-width: auto;
+  }
+}
+

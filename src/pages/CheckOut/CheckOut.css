@@ -1,0 +1,112 @@
+/* Shared checkout spacing and helper styles */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Checkout fields use one consistent shape and focus state */
+.form-control, .form-select {
+  border: 1px solid #e8e8e8 !important;
+  color: #333 !important;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 48px;
+  width: 100%;
+  background-color: #fafafa;
+  border-radius: 6px;
+  padding: 12px 16px !important;
+  transition: all 0.2s ease;
+}
+
+/* Bootstrap's blue focus glow does not match the checkout design */
+.form-control:focus, .form-select:focus {
+  border-color: #d0d0d0 !important;
+  background-color: #fff !important;
+}
+
+/* Keep placeholder text quiet until the field is used */
+.form-control::placeholder {
+  color: #b8b8b8;
+  opacity: 1;
+  font-weight: 400;
+}
+
+/* Select text follows the same muted field styling */
+.form-select option {
+  color: #333;
+  background-color: #fff;
+}
+
+.form-select option:checked {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Styles the select arrow */
+.custom-select-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23666' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
+  padding-right: 44px !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.custom-select-icon:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Styles the payment options */
+.custom-payment-option {
+  transition: background-color 0.2s, border-color 0.2s;
+  background-color: #fff;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.custom-payment-option.active {
+  background-color: #f7f7f7 !important;
+  border-color: #000 !important;
+}
+
+/* Replaces the default radio appearance with the custom version */
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #a0aec0 !important;
+  border-radius: 50%;
+  outline: none;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+/* Changes the radio border when it is selected */
+.custom-radio:checked {
+  background-color: #fff !important;
+  border-color: #000 !important;
+}
+
+/* Draws the inner circle when the radio is selected */
+.custom-radio:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.custom-payment-option:has(.custom-radio:checked) {
+  background-color: #f7f7f7 !important;
+}
+
+
+
+

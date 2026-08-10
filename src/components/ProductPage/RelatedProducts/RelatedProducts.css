@@ -1,0 +1,44 @@
+.related-products {
+  background-color: #ffffff;
+}
+
+/* Styles the product tab buttons */
+.related-products-tabs {
+  gap: 48px;
+}
+
+.related-products-tabs .nav-link {
+  color: #999 !important;
+  border: none;
+  padding: 12px 0;
+  font-weight: 500;
+  font-size: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.related-products-tabs .nav-link:hover {
+  color: #333 !important;
+}
+
+.related-products-tabs .nav-link.active-tab {
+  color: #000 !important;
+  border-bottom: 2px solid #000;
+}
+
+@media (max-width: 768px) {
+  .related-products {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .related-products-tabs {
+    gap: 24px;
+  }
+
+  .related-products-tabs .nav-link {
+    font-size: 16px;
+  }
+}
+

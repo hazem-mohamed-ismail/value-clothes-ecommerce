@@ -1,0 +1,105 @@
+﻿.main-navigation {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1030 !important;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.navbar-nav .nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #212529;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.main-navigation__dropdown-item .fa-chevron-down {
+  transition: transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.main-navigation__dropdown-item:hover > .nav-link {
+  color: #dc4646;
+}
+
+.main-navigation__dropdown-item:hover .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.main-navigation__dropdown-item {
+  position: relative;
+}
+
+.main-navigation__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 190px;
+  margin-top: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 37, 41, 0.08);
+  border-radius: 0 0 14px 14px ;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+}
+
+.main-navigation__dropdown-item:hover > .main-navigation__dropdown-menu,
+.main-navigation__dropdown-item:hover .main-navigation__dropdown-menu,
+.main-navigation__dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.main-navigation__dropdown-menu .dropdown-item {
+  color: #5f6368;
+  padding: 10px 18px;
+  display: block;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.main-navigation__dropdown-menu .dropdown-item:hover {
+  background-color: rgba(220, 70, 70, 0.06);
+  color: #212529;
+}
+
+.navbar-brand img {
+  max-height: 28px;
+  width: auto;
+}
+
+.bi-heart,
+.bi-person,
+.bi-handbag {
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.bi-heart:hover,
+.bi-person:hover,
+.bi-handbag:hover {
+  color: #dc4646;
+}
+
+@media (max-width: 767.98px) {
+  .navbar {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .navbar-brand {
+    max-width: 160px;
+  }
+
+  .bi-heart,
+  .bi-person,
+  .bi-handbag {
+    font-size: 18px;
+  }
+}
