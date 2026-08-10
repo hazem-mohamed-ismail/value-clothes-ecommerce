@@ -1,8 +1,9 @@
 import "./TopTrending.css";
 import ProductCard from "../../common/ProductCard/ProductCard";
-import productsData from "../../../data/products.json";
+import { useProductContext } from "../../../context/ProductFromApi";
 
 export default function TopTrending() {
+  const productsData = useProductContext();
   const trendingProducts = productsData.filter(p => [12, 18, 19, 20].includes(p.id));
 
   const renderProducts = <ProductCard products={trendingProducts} showBadges={false} />;

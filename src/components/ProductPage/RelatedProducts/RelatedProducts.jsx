@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import ProductCard from "../../common/ProductCard/ProductCard";
-import productsData from "../../../data/products.json";
+import { useProductContext } from "../../../context/ProductFromApi";
 import "./RelatedProducts.css";
 
 export default function RelatedProducts() {
   const [active, setActive] = useState("related");
+  const productsData = useProductContext();
 
   const relatedProductsData = productsData.filter(p => [10, 11, 12, 13].includes(p.id));
   const recentlyViewedData = productsData.filter(p => [14, 15, 16, 17].includes(p.id));

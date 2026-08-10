@@ -3,9 +3,10 @@ import ProductDetails from "../../components/ProductPage/ProductDetails/ProductD
 import DescriptionSection from "../../components/ProductPage/DescriptionSection/DescriptionSection";
 import RelatedProducts from "../../components/ProductPage/RelatedProducts/RelatedProducts";
 import SizeGuide from "../../components/ProductPage/SizeGuide/SizeGuide";
-import products from "../../data/products.json";
+import { useProductContext } from "../../context/ProductFromApi";
 
 export default function ProductPage() {
+  const products = useProductContext();
   const product = products.find((item) => item.id === 13);
 
   return (

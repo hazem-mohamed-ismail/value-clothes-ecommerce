@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./OrderSummary.css";
 import { useShoppingCart } from "../../../context/CartSystem";
-import Products from "../../../data/products.json";
+import { useProductContext } from "../../../context/ProductFromApi";
 export default function OrderSummary() {
   const { cartItems } = useShoppingCart();
+  const products = useProductContext();
   const [shippingPrice, setShippingPrice] = useState(0);
 
   const TotalPrice = cartItems.reduce((total, item) => {
-    const Product = Products.find((p) => p.id === item.id);
+    const Product = products.find((p) => p.id === item.id);
     return total + (Product ? Product.price * item.quantity : 0);
   }, 0);
 

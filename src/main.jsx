@@ -10,6 +10,7 @@ import "flag-icons/css/flag-icons.min.css";
 import { ShoppingCartProvider } from "./context/CartSystem";
 import { SideNavCartProvider } from "./context/SideNavCart";
 import { WishlistProvider } from "./context/WishlistSystem";
+import ProductFromApi from "./context/ProductFromApi";
 
 
 // https://api.escuelajs.co/api/v1/products
@@ -21,7 +22,9 @@ createRoot(document.getElementById("root")).render(
       <ShoppingCartProvider>
         <SideNavCartProvider>
           <WishlistProvider>
-            <App />
+            <ProductFromApi>
+              <App />
+            </ProductFromApi>
           </WishlistProvider>
         </SideNavCartProvider>
       </ShoppingCartProvider>

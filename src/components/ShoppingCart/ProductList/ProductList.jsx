@@ -1,13 +1,14 @@
 import "./ProductList.css";
 import CartProductItem from "../CartProductItem/CartProductItem";
-import Products from "../../../data/products.json";
+import { useProductContext } from "../../../context/ProductFromApi";
 import { useShoppingCart } from "../../../context/CartSystem";
 
 export default function ProductList() {
   const { cartItems } = useShoppingCart();
+  const products = useProductContext();
 
   const filteredCartItems = cartItems.map((cartItem) => {
-    const product = Products.find((p) => p.id === cartItem.id);
+    const product = products.find((p) => p.id === cartItem.id);
     return {...product, quantity: cartItem.quantity}
   });
 

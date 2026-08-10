@@ -2,16 +2,17 @@ import { Offcanvas } from "react-bootstrap";
 import "./ShoppingCartDrawer.css";
 import { Link } from "react-router-dom";
 import { useShowSideNavCart } from "../../../context/SideNavCart";
-import Products from "../../../data/products.json";
+import { useProductContext } from "../../../context/ProductFromApi";
 import { useShoppingCart } from "../../../context/CartSystem";
 import ShoppingCartDrawerItem from "./ShoppingCartDrawerItem";
 
 const ShoppingCartDrawer = () => {
   const { show, setShow } = useShowSideNavCart();
   const { cartItems } = useShoppingCart();
+  const products = useProductContext();
 
   const filteredCartItems = cartItems.map((cartItem) => {
-    const product = Products.find((p) => p.id === cartItem.id);
+    const product = products.find((p) => p.id === cartItem.id);
     return { ...product, quantity: cartItem.quantity };
   });
 

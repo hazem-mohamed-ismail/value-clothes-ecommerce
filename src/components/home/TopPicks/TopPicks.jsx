@@ -1,8 +1,9 @@
 import "./TopPicks.css";
 import ProductCard from "../../common/ProductCard/ProductCard";
-import productsData from "../../../data/products.json";
+import { useProductContext } from "../../../context/ProductFromApi";
 
 export default function TopPicks() {
+  const productsData = useProductContext();
   const topPicksProducts = productsData.filter((product) => {
     return [12, 18, 19, 20].includes(product.id);
   });

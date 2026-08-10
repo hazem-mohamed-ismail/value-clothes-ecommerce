@@ -2,11 +2,12 @@ import PageHeader from "../../components/common/PageHeader/PageHeader";
 import ProductCard from "../../components/common/ProductCard/ProductCard";
 import { Link } from "react-router-dom";
 import { useWishlist } from "../../context/WishlistSystem";
-import products from "../../data/products.json";
+import { useProductContext } from "../../context/ProductFromApi";
 import "./Wishlist.css";
 
 function Wishlist() {
   const { wishlistItems } = useWishlist();
+  const products = useProductContext();
   const wishlistProducts = products.filter((product) =>
     wishlistItems.includes(product.id),
   );

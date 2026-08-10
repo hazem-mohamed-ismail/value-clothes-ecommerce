@@ -4,10 +4,11 @@ import Filters from "../../components/ShoppingPage/Filters/Filters";
 import DrawerFilters from "../../components/ShoppingPage/DrawerFilters/DrawerFilters";
 import "./ShoppingPage.css";
 import { useState } from "react";
-import productsData from "../../data/products.json";
+import { useProductContext } from "../../context/ProductFromApi";
 
 export default function ShoppingPage() {
   const [viewMode, setViewMode] = useState("col-lg-4 col-md-6 col-12");
+  const productsData = useProductContext();
 
   const renderProducts = productsData.map((product) => {
     return (
