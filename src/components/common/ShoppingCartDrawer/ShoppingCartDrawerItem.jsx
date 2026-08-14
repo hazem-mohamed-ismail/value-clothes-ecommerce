@@ -12,13 +12,13 @@ export default function ShoppingCartDrawerItem({ item }) {
       >
         <img
           src={item.image}
-          alt={item.name}
+          alt={item.title}
           className="item-img rounded-3 me-3"
         />
         <div className="flex-grow-1">
           <div className="d-flex justify-content-between align-items-start">
             <h6 className="mb-1 text-truncate" style={{ maxWidth: "140px" }}>
-              {item.name}
+              {item.title}
             </h6>
             <button
               className="btn p-0 text-danger remove-btn text-decoration-underline border-0"

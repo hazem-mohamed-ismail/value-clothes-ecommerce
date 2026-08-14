@@ -7,72 +7,22 @@ import Slider from "@mui/material/Slider";
 
 import "./Filters.css";
 
-export default function Filters() {
-  const productCategoriesItems = [
-    { label: "Accessories", count: 1 },
-    { label: "Dresses", count: 12 },
-    { label: "Outerwear", count: 1 },
-    { label: "Shirts", count: 3 },
-    { label: "Tops", count: 3 },
-  ];
+export default function Filters({
+  filterByPrice,
+  productCategory,
+  sortByPrice,
+  rating,
+  search,
+  setFilterByPrice,
+  setProductCategory,
+  setRating,
+  setSortByPrice,
+  setSearch,
+  handleResetFilters,
+}) {
+  const isNumber = /^\d+$/;
 
-  const productCategoriesRender = productCategoriesItems.map((item, index) => (
-    <li
-      key={index}
-      className="d-flex justify-content-between align-items-center px-2 border-bottom"
-    >
-      <span>
-        {item.label} ({item.count})
-      </span>
-    </li>
-  ));
-
-  const filterByPriceDefault = [0, 120];
-
-  const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL", "Free Size"];
-
-  // Each color also carries the class used for its small color dot
-  const colorsList = [
-    ["Beige", "color-beige", 3],
-    ["Blue", "color-blue", 5],
-    ["Brown", "color-brown", 6],
-    ["Dark Blue", "color-darkblue", 1],
-    ["Light", "color-light", 1],
-    ["Pink", "color-pink", 1],
-    ["Various", "color-various", 33],
-    ["Warm Brown", "color-warmbrown", 1],
-    ["White", "color-white", 1],
-  ];
-
-  const colorsRender = colorsList.map(([label, colorClass, count]) => (
-    <li key={label} className="d-flex justify-content-between align-items-center py-2 border-bottom">
-      <span className="d-flex align-items-center gap-2">
-        <span className={`color-dot ${colorClass}`} />
-        {label}
-      </span>
-      <span className="item-count text-muted">{count}</span>
-    </li>
-  ));
-
-  const brands = [
-    ["Adidas", 6],
-    ["Gucci", 7],
-    ["Hermes", 6],
-    ["Louis Vuitton", 6],
-    ["Nike", 6],
-    ["Zalando", 5],
-    ["Zara", 5],
-  ];
-
-  const brandsRender = brands.map(([name, count]) => (
-    <li key={name} className="d-flex justify-content-between align-items-center py-2">
-      <label className="form-check-label d-flex align-items-center gap-2 mb-0">
-        <input type="checkbox" className="form-check-input" />
-        {name}
-      </label>
-      <span className="item-count text-muted">{count}</span>
-    </li>
-  ));
+  
 
   return (
     <div className="filters-panel">
@@ -80,19 +30,143 @@ export default function Filters() {
         <h2 className="mb-3">Filters</h2>
       </div>
 
-        {/* Categories are open by default so the main filters are visible immediately */}
-      <Accordion className="filter-accordion" defaultExpanded disableGutters elevation={0} square>
+      {/* Search */}
+      <Accordion
+        className="filter-accordion"
+        defaultExpanded
+        disableGutters
+        elevation={0}
+        square
+      >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography variant="subtitle1" className="filter-title">
+            Search
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails className="filter-details">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search products..."
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+          />
+        </AccordionDetails>
+      </Accordion>
+
+      {/* Categories */}
+      <Accordion
+        className="filter-accordion"
+        defaultExpanded
+        disableGutters
+        elevation={0}
+        square
+      >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="subtitle1" className="filter-title">
             Product Categories
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <ul className="list-unstyled filter-list mb-0">{productCategoriesRender}</ul>
+          <ul className="list-unstyled filter-list mb-0">
+            <li className="d-flex justify-content-between align-items-center px-2 border-bottom">
+              <label
+                className="d-flex align-items-center gap-2"
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="checkbox"
+                  className="form-check-input my-auto"
+                  checked={productCategory.includes("electronics")}
+                  onChange={() => {
+                    setProductCategory((prev) =>
+                      prev.includes("electronics")
+                        ? prev.filter((c) => c !== "electronics")
+                        : [...prev, "electronics"],
+                    );
+                  }}
+                />
+                electronics
+              </label>
+              <span className="item-count text-muted">6</span>
+            </li>
+            <li className="d-flex justify-content-between align-items-center px-2 border-bottom">
+              <label
+                className="d-flex align-items-center gap-2"
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="checkbox"
+                  className="form-check-input my-auto"
+                  checked={productCategory.includes("jewelery")}
+                  onChange={() => {
+                    setProductCategory((prev) =>
+                      prev.includes("jewelery")
+                        ? prev.filter((c) => c !== "jewelery")
+                        : [...prev, "jewelery"],
+                    );
+                  }}
+                />
+                jewelery
+              </label>
+              <span className="item-count text-muted">4</span>
+            </li>
+            <li className="d-flex justify-content-between align-items-center px-2 border-bottom">
+              <label
+                className="d-flex align-items-center gap-2"
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="checkbox"
+                  className="form-check-input my-auto"
+                  checked={productCategory.includes("men's clothing")}
+                  onChange={() => {
+                    setProductCategory((prev) =>
+                      prev.includes("men's clothing")
+                        ? prev.filter((c) => c !== "men's clothing")
+                        : [...prev, "men's clothing"],
+                    );
+                  }}
+                />
+                men's clothing
+              </label>
+              <span className="item-count text-muted">4</span>
+            </li>
+            <li className="d-flex justify-content-between align-items-center px-2 border-bottom">
+              <label
+                className="d-flex align-items-center gap-2"
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="checkbox"
+                  className="form-check-input my-auto"
+                  checked={productCategory.includes("women's clothing")}
+                  onChange={() => {
+                    setProductCategory((prev) =>
+                      prev.includes("women's clothing")
+                        ? prev.filter((c) => c !== "women's clothing")
+                        : [...prev, "women's clothing"],
+                    );
+                  }}
+                />
+                women's clothing
+              </label>
+              <span className="item-count text-muted">6</span>
+            </li>
+          </ul>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion className="filter-accordion" defaultExpanded disableGutters elevation={0} square>
+      {/* Price */}
+      <Accordion
+        className="filter-accordion"
+        defaultExpanded
+        disableGutters
+        elevation={0}
+        square
+      >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="subtitle1" className="filter-title">
             Filter By Price
@@ -100,91 +174,245 @@ export default function Filters() {
         </AccordionSummary>
         <AccordionDetails className="filter-details">
           <div className="price-slider-wrapper">
-            <Slider defaultValue={filterByPriceDefault} className="price-slider" />
+            <Slider
+              className="price-slider"
+              min={0}
+              max={1000}
+              value={[
+                Number(filterByPrice.minPrice),
+                Number(filterByPrice.maxPrice),
+              ]}
+              onChange={(e, newValue) => {
+                setFilterByPrice({
+                  ...filterByPrice,
+                  minPrice: newValue[0],
+                  maxPrice: newValue[1],
+                });
+              }}
+              sx={{
+                "& .MuiSlider-thumb": {
+                  boxShadow: "none",
+                  "&:hover": {
+                    boxShadow: "none",
+                  },
+                  "&.Mui-focusVisible": {
+                    boxShadow: "none",
+                  },
+                  "&.Mui-active": {
+                    boxShadow: "none",
+                  },
+                },
+              }}
+            />
           </div>
           <div className="row g-2 price-inputs">
             <div className="col">
               <div className="mb-3">
                 <label className="form-label">Min</label>
-                <input type="text" className="form-control" defaultValue="0" />
+                <input
+                  type="text"
+                  className="form-control"
+                  value={filterByPrice.minPrice}
+                  onChange={(e) => {
+                    if (
+                      isNumber.test(e.target.value) ||
+                      e.target.value === ""
+                    ) {
+                      setFilterByPrice({
+                        ...filterByPrice,
+                        minPrice: e.target.value,
+                      });
+                    } else {
+                      setFilterByPrice({
+                        ...filterByPrice,
+                        minPrice: filterByPrice.minPrice,
+                      });
+                    }
+                  }}
+                />
               </div>
             </div>
             <div className="col">
               <div className="mb-3">
                 <label className="form-label">Max</label>
-                <input type="text" className="form-control" defaultValue="120" />
+                <input
+                  type="text"
+                  className="form-control"
+                  value={filterByPrice.maxPrice}
+                  onChange={(e) => {
+                    if (
+                      isNumber.test(e.target.value) ||
+                      e.target.value === ""
+                    ) {
+                      setFilterByPrice({
+                        ...filterByPrice,
+                        maxPrice: e.target.value,
+                      });
+                    } else {
+                      setFilterByPrice({
+                        ...filterByPrice,
+                        maxPrice: filterByPrice.maxPrice,
+                      });
+                    }
+                  }}
+                />
               </div>
             </div>
           </div>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion className="filter-accordion" disableGutters elevation={0} square>
+      {/* Rating */}
+      <Accordion
+        className="filter-accordion"
+        disableGutters
+        elevation={0}
+        square
+      >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="subtitle1" className="filter-title">
-            Size
+            Rating
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div className="size-options d-flex flex-wrap gap-2">
-            {sizes.map((size) => (
-              <button key={size} type="button" className="btn size-chip">
-                {size}
-              </button>
-            ))}
-          </div>
-        </AccordionDetails>
-      </Accordion>
+          <ul className="list-unstyled filter-list mb-0">
+            <li className="d-flex justify-content-between align-items-center px-2 border-bottom">
+              <label
+                className="d-flex align-items-center gap-2 mb-0"
+                style={{ cursor: "pointer" }}
+              >
+                {/* 4 Stars AND up */}
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  checked={rating.includes(4)}
+                  onChange={() => {
+                    setRating((prev) =>
+                      prev.includes(4)
+                        ? prev.filter((r) => r !== 4)
+                        : [...prev, 4],
+                    );
+                  }}
+                />
 
-      <Accordion className="filter-accordion" disableGutters elevation={0} square>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="subtitle1" className="filter-title">
-            Colors
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ul className="list-unstyled color-list mb-0">{colorsRender}</ul>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion className="filter-accordion" disableGutters elevation={0} square>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="subtitle1" className="filter-title">
-            Availability
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ul className="list-unstyled availability-list mb-0">
-            <li className="d-flex justify-content-between align-items-center py-2 border-bottom">
-              <label className="form-check-label d-flex align-items-center gap-2 mb-0">
-                <input type="checkbox" className="form-check-input" />
-                In stock
+                <span>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i> & up
+                </span>
               </label>
-              <span className="item-count text-muted">37</span>
             </li>
-            <li className="d-flex justify-content-between align-items-center py-2">
-              <label className="form-check-label d-flex align-items-center gap-2 mb-0">
-                <input type="checkbox" className="form-check-input" />
-                Out of stock
+            <li className="d-flex justify-content-between align-items-center px-2 border-bottom">
+              <label
+                className="d-flex align-items-center gap-2 mb-0"
+                style={{ cursor: "pointer" }}
+              >
+                {/* 3 Stars AND up */}
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  checked={rating.includes(3)}
+                  onChange={() => {
+                    setRating((prev) =>
+                      prev.includes(3)
+                        ? prev.filter((r) => r !== 3)
+                        : [...prev, 3],
+                    );
+                  }}
+                />
+                <span>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i> & up
+                </span>
               </label>
-              <span className="item-count text-muted">4</span>
+            </li>
+            <li className="d-flex justify-content-between align-items-center px-2 border-bottom">
+              <label
+                className="d-flex align-items-center gap-2 mb-0"
+                style={{ cursor: "pointer" }}
+              >
+                {/* 2 Stars AND up */}
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  checked={rating.includes(2)}
+                  onChange={() => {
+                    setRating((prev) =>
+                      prev.includes(2)
+                        ? prev.filter((r) => r !== 2)
+                        : [...prev, 2],
+                    );
+                  }}
+                />
+                <span>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i> & up
+                </span>
+              </label>
+            </li>
+            <li className="d-flex justify-content-between align-items-center px-2 border-bottom">
+              <label
+                className="d-flex align-items-center gap-2 mb-0"
+                style={{ cursor: "pointer" }}
+              >
+                {/* 1 Star AND up */}
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  checked={rating.includes(1)}
+                  onChange={() => {
+                    setRating((prev) =>
+                      prev.includes(1)
+                        ? prev.filter((r) => r !== 1)
+                        : [...prev, 1],
+                    );
+                  }}
+                />
+
+                <span>
+                  <i className="fa-solid fa-star"></i> & up
+                </span>
+              </label>
             </li>
           </ul>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion className="filter-accordion" disableGutters elevation={0} square>
+      {/* Sort */}
+      <Accordion
+        className="filter-accordion"
+        disableGutters
+        elevation={0}
+        square
+      >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="subtitle1" className="filter-title">
-            Brands
+            Sort By
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <ul className="list-unstyled brands-list">{brandsRender}</ul>
+          <select
+            className="form-control"
+            value={sortByPrice}
+            onChange={(e) => {
+              setSortByPrice(e.target.value);
+            }}
+          >
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating-desc">Rating: High to Low</option>
+          </select>
         </AccordionDetails>
       </Accordion>
 
-      <button type="button" className="btn btn-dark btn-lg w-100 mt-3 rounded-5">
+      <button
+        type="button"
+        className="btn btn-dark btn-lg w-100 mt-3 rounded-5"
+        onClick={handleResetFilters}
+      >
         Clear all filters
       </button>
     </div>

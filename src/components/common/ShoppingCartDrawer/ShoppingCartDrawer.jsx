@@ -16,6 +16,10 @@ const ShoppingCartDrawer = () => {
     return { ...product, quantity: cartItem.quantity };
   });
 
+  const subTotal = filteredCartItems.reduce((total, item) => {
+    return total + (item.price || 0) * item.quantity;
+  }, 0);
+
   const renderItems = filteredCartItems.map((item) => (
     <ShoppingCartDrawerItem key={item.id} item={item} />
   ));
@@ -52,7 +56,7 @@ const ShoppingCartDrawer = () => {
         <div className="cart-footer border-top bg-white p-4">
           <div className="d-flex justify-content-between align-items-center mb-3">
             <span className="fs-5 fw-bold">Subtotal</span>
-            <span className="fs-5 fw-bold">$80.98</span>
+            <span className="fs-5 fw-bold">${subTotal.toFixed(2)}</span>
           </div>
 
           <div className="d-flex gap-2">

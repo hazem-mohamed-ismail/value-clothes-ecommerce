@@ -1,11 +1,12 @@
 import "./Banners.css";
 import banners from "../../../data/banners.json";
+import { Link } from "react-router-dom";
 
 export default function Banners() {
   const renderInfiniteBanners = banners.map((banner,index) => {
     return (
         <div className="infinite-banner-item" key={index}>
-            <a href="/shop-default" className="cls-wrap">
+            <Link to="/shop-left-sidebar" className="cls-wrap">
               <h4>{banner.title}</h4>
               <div className="img-cls">
                 <img
@@ -16,7 +17,7 @@ export default function Banners() {
                   loading="lazy"
                 />
               </div>
-            </a>
+            </Link>
           </div>)
   });
 

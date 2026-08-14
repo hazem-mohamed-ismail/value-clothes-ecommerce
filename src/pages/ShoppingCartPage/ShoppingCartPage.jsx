@@ -8,12 +8,10 @@ import ProductStatus from "../../components/common/ProductStatus/ProductStatus";
 
 export default function ShoppingCartPage() {
   const { cartItems } = useShoppingCart();
-  const { loading, error } = useProductContext() || {};
+  const { loading, error } = useProductContext();
 
   if (loading) {
-    return (
-      <ProductStatus loading={loading} />
-    );
+    return <ProductStatus loading={loading} />;
   }
 
   if (error) {
@@ -39,7 +37,6 @@ export default function ShoppingCartPage() {
           <div className={`${cartItems.length > 0 ? "col-lg-8" : "col-lg-12"}`}>
             <ProductList />
           </div>
-
 
           {cartItems.length > 0 && (
             <div className="col-lg-4">

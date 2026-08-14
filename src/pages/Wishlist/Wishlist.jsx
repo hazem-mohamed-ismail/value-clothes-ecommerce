@@ -52,7 +52,7 @@ function Wishlist() {
       <div className="container">
         <div className="row g-4 ">
           {wishlistProducts.map((product) => (
-            <div key={product.id} className="col-xl-3 col-lg-4 col-md-6">
+            <div key={product.id} className="col-xl-3 col-lg-4 col-md-6 col-6">
               <ProductCard product={product} />
             </div>
           ))}

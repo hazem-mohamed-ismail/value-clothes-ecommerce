@@ -3,7 +3,18 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Filters from "../Filters/Filters";
 import "./DrawerFilters.css";
 
-export default function DrawerFilters() {
+export default function DrawerFilters({
+  filterByPrice,
+  productCategory,
+  sortByPrice,
+  rating,
+  search,
+  setFilterByPrice,
+  setProductCategory,
+  setRating,
+  setSortByPrice,
+  setSearch
+}) {
   const [show, setShow] = useState(false);
 
   return (
@@ -26,7 +37,18 @@ export default function DrawerFilters() {
           <Offcanvas.Title className="fw-bold fs-4">Filters</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="p-3">
-          <Filters />
+          <Filters
+            filterByPrice={filterByPrice}
+            productCategory={productCategory}
+            sortByPrice={sortByPrice}
+            rating={rating}
+            search={search}
+            setFilterByPrice={setFilterByPrice}
+            setProductCategory={setProductCategory}
+            setRating={setRating}
+            setSortByPrice={setSortByPrice}
+            setSearch={setSearch}
+          />
         </Offcanvas.Body>
       </Offcanvas>
     </>

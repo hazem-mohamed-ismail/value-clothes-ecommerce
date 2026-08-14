@@ -10,7 +10,7 @@ export default function TopPicks() {
   });
 
   const renderProducts = topPicksProducts.map((product) => (
-    <div className="col-lg-3 col-md-6" key={product.id}>
+    <div className="col-lg-3 col-md-6 col-6" key={product.id}>
       <ProductCard product={product} />
     </div>
   ));

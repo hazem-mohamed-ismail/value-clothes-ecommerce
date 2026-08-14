@@ -11,18 +11,9 @@ function ProductFromApi({ children }) {
     async function getProductsData() {
       try {
         const response = await axios.get(
-          "https://api.escuelajs.co/api/v1/products",
+          "https://fakestoreapi.com/products",
         );
-        setProductsData(
-          response.data.map((product) => ({
-            ...product,
-            type: product.category.name ,
-            image: product.images,
-            originalPrice: product.price,
-            rating: product.rating,
-            discount: 0,
-          })),
-        );
+        setProductsData(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
         setError(true);

@@ -11,7 +11,7 @@ body {
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
-  
+
 }
 
 * {
@@ -25,8 +25,8 @@ body {
 /* Bootstrap adds these shadows by default but the design here is flat */
 /* Keep the focus state dark and simple */
 .form-control:focus {
-    border-color: #0d0d0d !important;
-    box-shadow: none !important;
+  border-color: #0d0d0d !important;
+  box-shadow: none !important;
 }
 
 /* Cards should stay flat */
@@ -43,7 +43,8 @@ body {
 .btn-warning,
 .btn-info,
 .btn-light,
-.btn-dark {
+.btn-dark,
+.form-select {
   box-shadow: none !important;
 }
 
@@ -92,11 +93,11 @@ body {
 }
 
 /* Bootstrap adds a small shadow to checked/focused inputs so remove it */
-.form-check-input{
+.form-check-input {
   box-shadow: none !important;
 }
 
 
-.btn-close{
+.btn-close {
   box-shadow: none !important;
 }

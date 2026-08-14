@@ -12,12 +12,7 @@ export default function ProductCard({ product, className = "" }) {
 
   if (!product) return null;
 
-  // جلب الصورة الأولى من مصفوفة الصور مع fallback للحماية
-  const productImage = product.images?.[0] || product.image;
-  const hoverImage = product.images?.[1] || productImage;
-
-  // تقييم افتراضي (لأن الـ API لا يحتوي على rating)
-  const ratingCount = product.rating || 5;
+  const ratingCount = Math.round(product.rating?.rate || 0);
   const Stars = [...Array(ratingCount)].map((_, index) => (
     <span key={index} className="star">
       <i className="fa-solid fa-star"></i>
@@ -29,9 +24,8 @@ export default function ProductCard({ product, className = "" }) {
       <div className="image-container">
         {/* Badges */}
         <div className="badges">
-            <span className="badge badge-discount">-15%</span>
-          {product.category?.name && (
-            <span className="badge badge-trend">{product.category.name}</span>
+          {product.category && (
+            <span className="badge badge-trend">{product.category}</span>
           )}
         </div>
 
@@ -54,17 +48,9 @@ export default function ProductCard({ product, className = "" }) {
 
         {/* Product Image */}
         <img
-          src={productImage}
+          src={product.image}
           alt={product.title}
           className="product-image product-image-primary cursor-pointer"
-          onClick={() => {
-            navigate(`/product`);
-          }}
-        />
-        <img
-          src={hoverImage}
-          alt={`${product.title} alternate view`}
-          className="product-image product-image-hover cursor-pointer"
           onClick={() => {
             navigate(`/product`);
           }}
@@ -87,16 +73,13 @@ export default function ProductCard({ product, className = "" }) {
       {/* Product Details */}
       <div className="product-details">
         <h3 className="product-title" title={product.title}>
-          {product.title }
+          {product.title}
         </h3>
 
         <div className="rating">{Stars}</div>
 
         <div className="price-container">
           <span className="current-price">${product.price}</span>
-          {product.originalPrice && (
-            <span className="original-price">${product.originalPrice}</span>
-          )}
         </div>
       </div>
     </div>

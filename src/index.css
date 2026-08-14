@@ -27,4 +27,7 @@ body {
 /* Thumb styling */
 ::-webkit-scrollbar-thumb {
   background: #f00505;
+  border-radius: 999px;
+  cursor: grab;
 }
+

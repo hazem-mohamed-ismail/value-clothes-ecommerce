@@ -19,7 +19,7 @@ export default function OrderSummary() {
 
       <div className="d-flex justify-content-between mb-3">
         <span className="text-secondary">Subtotal</span>
-        <span className="fw-semibold">${TotalPrice-shippingPrice}</span>
+        <span className="fw-semibold">${(TotalPrice-shippingPrice).toFixed(2)}</span>
       </div>
 
       <div className="d-flex justify-content-between mb-3">
@@ -76,7 +76,7 @@ export default function OrderSummary() {
 
       <div className="d-flex justify-content-between align-items-center mb-4">
         <span className="fs-5 fw-semibold">Total</span>
-        <span className="fs-4 fw-bold">${TotalPrice + shippingPrice}</span>
+        <span className="fs-4 fw-bold">${(TotalPrice + shippingPrice).toFixed(2)}</span>
       </div>
 
       <div className="form-check mb-4">

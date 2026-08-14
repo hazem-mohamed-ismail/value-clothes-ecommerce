@@ -11,12 +11,12 @@ export default function CartProductItem({ product }) {
         <div className="product-img-wrapper bg-light rounded  flex-shrink-0">
           <img
             src={product.image}
-            alt={product.name}
+            alt={product.title}
             className="w-100 h-100 object-fit-cover rounded"
           />
         </div>
         <div>
-          <h6 className="mb-1 fw-semibold text-dark">{product.name}</h6>
+          <h6 className="mb-1 fw-semibold text-dark">{product.title}</h6>
           {/* <div className="small text-secondary mb-1">
             Color: <span className="text-dark">{product.color}</span>
           </div> */}
@@ -34,7 +34,7 @@ export default function CartProductItem({ product }) {
           <div className="col-12 col-md-4 d-flex justify-content-between justify-content-md-center align-items-center py-3 py-md-0 border-bottom-sm">
             <span className="d-md-none fw-semibold text-dark">Price</span>
             <span className="text-danger fw-semibold">
-              {"$" + product.price}
+              {"$" + product.price.toFixed(2)}
             </span>
           </div>
 
@@ -67,7 +67,7 @@ export default function CartProductItem({ product }) {
               {"$" + product.price * product.quantity}
             </span>
             <span className="d-none d-md-inline text-danger fw-semibold">
-              {"$" + product.price * product.quantity}
+              {"$" + (product.price * product.quantity).toFixed(2)}
             </span>
           </div>
         </div>

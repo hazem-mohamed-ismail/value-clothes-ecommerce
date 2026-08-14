@@ -13,13 +13,13 @@ export default function CheckOutCartItem({ item }) {
       <div className="cart-item-image-wrapper">
         <img
           src={item.image}
-          alt={item.name}
+          alt={item.title}
           className="cart-item-image"
         />
       </div>
 
       <div className="cart-item-details">
-        <h3 className="cart-item-title">{item.name}</h3>
+        <h3 className="cart-item-title">{item.title}</h3>
 
         <p className="cart-item-color">
           Color: <span className="color-value">{item.color || "Default"}</span>
