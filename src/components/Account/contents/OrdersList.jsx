@@ -119,7 +119,7 @@ function OrdersList() {
   return (
     <div className="container orders-container mb-5 w-100">
       <h1 className="orders-main-title mb-4">Your Orders</h1>
-      <div className="tabs-nav d-flex flex-wrap mb-4  w-100">{renderedTabs}</div>
+      <div className="tabs-nav mb-4 w-100">{renderedTabs}</div>
       <div className="orders-list-wrapper w-100">{renderedOrders}</div>
     </div>
   );
