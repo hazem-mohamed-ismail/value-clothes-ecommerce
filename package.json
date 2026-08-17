@@ -25,8 +25,8 @@
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.6",
     "react-image-gallery": "^2.1.2",
-    "react-image-magnify": "^2.7.4",
     "react-router-dom": "^7.15.1",
+    "react-scroll-to-top": "^3.1.0",
     "swiper": "^12.2.0"
   },
   "devDependencies": {

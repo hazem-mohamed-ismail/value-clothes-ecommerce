@@ -1,4 +1,5 @@
 import "./Footer.css";
+import logo from "../../../assets/logo.svg";
 
 export default function Footer(){
   return (
@@ -6,7 +7,7 @@ export default function Footer(){
       <div className="container">
         <div className="row g-4">
           <div className="col-10 col-md-6 col-lg-4">
-            <img src="src/assets/logo.svg" className="footer-logo mb-3" />
+            <img src={logo} className="footer-logo mb-3" />
             <p className="text-muted mb-1">
               600 N Michigan Ave, Chicago, IL 60611, USA
             </p>

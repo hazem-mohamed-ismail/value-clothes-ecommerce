@@ -16,8 +16,8 @@ export default function ShoppingPage() {
 
   // Scroll to top when currentPage changes
   useEffect(() => {
-    document.body.scrollTop = 300;
-  }, [currentPage]);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [currentPage]);
 
   // States of filters
   const [rating, setRating] = useState([]);
@@ -29,12 +29,10 @@ export default function ShoppingPage() {
     maxPrice: 1000,
   });
 
-
   // Reset current page to 1 when any filter changes
   useEffect(() => {
     setCurrentPage(1);
   }, [rating, productCategory, filterByPrice, search]);
-
 
   const handleResetFilters = () => {
     setRating([]);
@@ -42,7 +40,6 @@ export default function ShoppingPage() {
     setSearch("");
     setSortByPrice("default");
     setFilterByPrice({ minPrice: 0, maxPrice: 1000 });
-
   };
 
   // START filters Logic

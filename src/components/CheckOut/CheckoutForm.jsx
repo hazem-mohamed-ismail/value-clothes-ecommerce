@@ -24,57 +24,29 @@ export default function CheckoutForm() {
 
   const [paymentMethod, setPaymentMethod] = useState("");
 
-  const handleFirstName = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, firstName: value }));
-    setAlertMessage((prev) => ({ ...prev, firstName: value.trim() === "" }));
-  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
-  const handleLastName = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, lastName: value }));
-    setAlertMessage((prev) => ({ ...prev, lastName: value.trim() === "" }));
-  };
+    // Email validation
+    if (name === "email") {
+      const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      setAlertMessage((prev) => ({ ...prev, email: !isValid }));
+      return;
+    }
 
-  const handleEmail = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, email: value }));
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    setAlertMessage((prev) => ({ ...prev, email: !isValid }));
-  };
+    // Phone validation
+    if (name === "phone") {
+      const digits = value.replace(/\D/g, "");
+      setAlertMessage((prev) => ({ ...prev, phone: digits.length < 7 }));
+      return;
+    }
 
-  const handlePhone = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, phone: value }));
-    const digits = value.replace(/\D/g, "");
-    setAlertMessage((prev) => ({ ...prev, phone: digits.length < 7 }));
-  };
-
-  const handleCity = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, city: value }));
-    setAlertMessage((prev) => ({ ...prev, city: value.trim() === "" }));
-  };
-
-  const handleStreet = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, street: value }));
-  };
-
-  const handlePostal = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, postalCode: value }));
-    setAlertMessage((prev) => ({ ...prev, postalCode: value.trim() === "" }));
-  };
-
-  const handleCountry = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, country: value }));
-  };
-
-  const handleNote = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, note: value }));
+    // Other fields - just check if empty
+    setAlertMessage((prev) => ({
+      ...prev,
+      [name]: name !== "street" && name !== "country" && name !== "note" && value.trim() === ""
+    }));
   };
 
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
@@ -166,10 +138,11 @@ export default function CheckoutForm() {
               </label>
               <input
                 type="text"
+                name="firstName"
                 className="form-control py-2 text-dark border-light-subtle"
                 placeholder="First Name"
                 value={formData.firstName}
-                onChange={handleFirstName}
+                onChange={handleChange}
                 required
               />
               {alertMessage.firstName && (
@@ -183,10 +156,11 @@ export default function CheckoutForm() {
               </label>
               <input
                 type="text"
+                name="lastName"
                 className="form-control py-2 text-dark border-light-subtle"
                 placeholder="Last Name"
                 value={formData.lastName}
-                onChange={handleLastName}
+                onChange={handleChange}
                 required
               />
               {alertMessage.lastName && (
@@ -203,10 +177,11 @@ export default function CheckoutForm() {
               </label>
               <input
                 type="email"
+                name="email"
                 className="form-control py-2 text-dark border-light-subtle"
                 placeholder="Email Address"
                 value={formData.email}
-                onChange={handleEmail}
+                onChange={handleChange}
                 required
               />
               {alertMessage.email && (
@@ -222,10 +197,11 @@ export default function CheckoutForm() {
               </label>
               <input
                 type="text"
+                name="phone"
                 className="form-control py-2 text-dark border-light-subtle"
                 placeholder="Phone Number"
                 value={formData.phone}
-                onChange={handlePhone}
+                onChange={handleChange}
                 required
               />
               {alertMessage.phone && (
@@ -242,9 +218,10 @@ export default function CheckoutForm() {
                 Country / Region <span className="text-muted small">(optional)</span>
               </label>
               <select
+                name="country"
                 className="form-select py-2 text-dark border-light-subtle custom-select-icon w-100"
                 value={formData.country}
-                onChange={handleCountry}
+                onChange={handleChange}
               >
                 <option value="" disabled hidden>
                   Choose Country / Region
@@ -263,10 +240,11 @@ export default function CheckoutForm() {
               </label>
               <input
                 type="text"
+                name="city"
                 className="form-control py-2 text-dark border-light-subtle"
                 placeholder="Town/City"
                 value={formData.city}
-                onChange={handleCity}
+                onChange={handleChange}
                 required
               />
               {alertMessage.city && (
@@ -279,10 +257,11 @@ export default function CheckoutForm() {
               </label>
               <input
                 type="text"
+                name="street"
                 className="form-control py-2 text-dark border-light-subtle"
                 placeholder="Street, Building, etc."
                 value={formData.street}
-                onChange={handleStreet}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -310,10 +289,11 @@ export default function CheckoutForm() {
               </label>
               <input
                 type="text"
+                name="postalCode"
                 className="form-control py-2 text-dark border-light-subtle"
                 placeholder="Postal Code"
                 value={formData.postalCode}
-                onChange={handlePostal}
+                onChange={handleChange}
                 required
               />
               {alertMessage.postalCode && (
@@ -327,11 +307,12 @@ export default function CheckoutForm() {
               Order Notes <span className="text-muted small">(optional)</span>
             </label>
             <textarea
+              name="note"
               className="form-control py-2 text-dark border-light-subtle"
               rows="3"
               placeholder="Write note (e.g., delivery instructions)..."
               value={formData.note}
-              onChange={handleNote}
+              onChange={handleChange}
             ></textarea>
           </div>
         </div>

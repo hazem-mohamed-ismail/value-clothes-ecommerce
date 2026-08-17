@@ -47,7 +47,7 @@ export default function AccountTabs({ active, setActive }) {
             setActive("logout");
             setTimeout(() => {
               navigate("/login");
-            }, 3500);
+            }, 3000);
           }}
         >
           <i className="bi-box-arrow-right me-2" /> Logout

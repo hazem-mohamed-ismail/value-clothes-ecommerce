@@ -15,47 +15,30 @@ const MessageForm = ({ title, subtitle, buttonText = "Send message" }) => {
     message: false,
   });
 
-  const handleFormName = (e) => {
-    const value = e.target.value;
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const finalValue = type === "checkbox" ? checked : value;
     
-    setFormData((prev) => ({ ...prev, name: value }));
-    
-    if (value.trim() === "") {
-      setAlertMessage((prev) => ({ ...prev, name: true }));
-    } else {
-      setAlertMessage((prev) => ({ ...prev, name: false }));
-    }
-  };
+    setFormData((prev) => ({ ...prev, [name]: finalValue }));
 
-  const handleFormEmail = (e) => {
-    const value = e.target.value;
-    
-    setFormData((prev) => ({ ...prev, email: value }));
-    
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    
-    if (!isValid) {
-      setAlertMessage((prev) => ({ ...prev, email: true }));
-    } else {
-      setAlertMessage((prev) => ({ ...prev, email: false }));
+    // Email validation
+    if (name === "email") {
+      const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      setAlertMessage((prev) => ({ ...prev, email: !isValid }));
+      return;
     }
-  };
 
-  const handleFormMessage = (e) => {
-    const value = e.target.value;
-    
-    setFormData((prev) => ({ ...prev, message: value }));
-    
-    if (value.trim().length < 20) {
-      setAlertMessage((prev) => ({ ...prev, message: true }));
-    } else {
-      setAlertMessage((prev) => ({ ...prev, message: false }));
+    // Message validation (minimum 20 characters)
+    if (name === "message") {
+      setAlertMessage((prev) => ({ ...prev, message: value.trim().length < 20 }));
+      return;
     }
-  };
 
-  const handleFormCheck = (e) => {
-    const checked = e.target.checked;
-    setFormData((prev) => ({ ...prev, check: checked }));
+    // Name validation (not empty)
+    if (name === "name") {
+      setAlertMessage((prev) => ({ ...prev, name: value.trim() === "" }));
+      return;
+    }
   };
 
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
@@ -97,9 +80,10 @@ const MessageForm = ({ title, subtitle, buttonText = "Send message" }) => {
             <input
               id="message-name"
               type="text"
+              name="name"
               className="form-control message-input"
               placeholder="Your Name*"
-              onChange={handleFormName}
+              onChange={handleChange}
               value={formData.name}
             />
             {alertMessage.name && (
@@ -113,9 +97,10 @@ const MessageForm = ({ title, subtitle, buttonText = "Send message" }) => {
             <input
               id="message-email"
               type="email"
+              name="email"
               className="form-control message-input"
               placeholder="Your Email*"
-              onChange={handleFormEmail}
+              onChange={handleChange}
               value={formData.email}
             />
             {alertMessage.email && (
@@ -130,10 +115,11 @@ const MessageForm = ({ title, subtitle, buttonText = "Send message" }) => {
           </label>
           <textarea
             id="message-text"
+            name="message"
             className="form-control message-textarea"
             rows="5"
             placeholder="Your Message*"
-            onChange={handleFormMessage}
+            onChange={handleChange}
             value={formData.message}
           ></textarea>
           {alertMessage.message && (
@@ -145,10 +131,11 @@ const MessageForm = ({ title, subtitle, buttonText = "Send message" }) => {
 
         <div className="form-check mb-4 message-form-checkbox">
           <input
+            name="check"
             className="form-check-input rounded-0"
             type="checkbox"
             id="message-saveInfo"
-            onChange={handleFormCheck}
+            onChange={handleChange}
             checked={formData.check}
           />
 

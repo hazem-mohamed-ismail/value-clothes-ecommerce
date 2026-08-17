@@ -2,6 +2,7 @@ import "./MainNavigation.css";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../../../context/CartSystem";
 import { useWishlist } from "../../../context/WishlistSystem";
+import logo from "../../../assets/logo.svg";
 
 export default function MainNav({ onSidebarToggle }) {
   const { cartItems } = useShoppingCart();
@@ -106,7 +107,7 @@ export default function MainNav({ onSidebarToggle }) {
           to="/"
         >
           <img
-            src="src/assets/logo.svg"
+            src={logo}
             alt="Amerce Logo"
             style={{ height: "24px" }}
           />

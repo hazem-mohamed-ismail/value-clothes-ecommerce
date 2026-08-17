@@ -1,13 +1,18 @@
 .description-tabs-nav {
+  overflow-x: auto !important;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
-  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  padding-bottom: 5px
+}
+
+.description-tabs-nav::-webkit-scrollbar-thumb {
+  display: none;
 }
 
 .tab-button {
   border: none;
+  font-size: 18px;
   background-color: transparent;
   color: #6c757d;
   font-weight: 500;
@@ -15,6 +20,12 @@
   cursor: pointer;
   transition: color 0.2s ease, border-bottom 0.2s ease, background-color 0.2s ease;
   border-bottom: 2px solid transparent;
+}
+
+@media(max-width:576px) {
+  .tab-button {
+    font-size: 14px;
+  }
 }
 
 .tab-button:hover {

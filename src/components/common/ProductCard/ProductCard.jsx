@@ -52,7 +52,9 @@ export default function ProductCard({ product, className = "" }) {
           alt={product.title}
           className="product-image product-image-primary cursor-pointer"
           onClick={() => {
-            navigate(`/product`);
+            navigate(`/productDetails/${product.id}`);
+
+            document.body.scrollTop = 0;
           }}
         />
 

@@ -1,20 +1,17 @@
 import "./DescriptionTab.css";
 
-export default function DescriptionTab() {
+export default function DescriptionTab({ product }) {
   return (
     <div className="description-panel">
+      <p>{product?.description || "No description available for this product."}</p>
       <p>
-        This product is crafted for effortless everyday wear. It combines a slim fit
-        with premium breathable fabric so you stay comfortable while looking polished.
-      </p>
-      <p>
-        The stretch cotton blend allows natural movement, and the sophisticated design
-        keeps the silhouette modern and flattering.
+        This item belongs to the <strong>{product?.category || "product"}</strong> category and is
+        currently rated <strong>{product?.rating?.rate || 0}</strong> / 5 by customers.
       </p>
       <ul>
-        <li>Material: 55% polyester, 30% acrylic, 13% polyamide, 2% elastane</li>
-        <li>Fit: Slim with a tailored waist and softly draped shoulders</li>
-        <li>Care: Machine wash cold, tumble dry low, iron on low heat</li>
+        <li>Category: {product?.category || "Uncategorized"}</li>
+        <li>Price: ${Number(product?.price || 0).toFixed(2)}</li>
+        <li>Rating: {product?.rating?.rate || 0} out of 5</li>
       </ul>
     </div>
   );

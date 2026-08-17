@@ -6,7 +6,7 @@ import CustomerReviewsTab from "./CustomerReviewsTab/CustomerReviewsTab";
 import ShippingReturnsTab from "./ShippingReturnsTab/ShippingReturnsTab";
 import ReturnPoliciesTab from "./ReturnPoliciesTab/ReturnPoliciesTab";
 
-export default function DescriptionSection() {
+export default function DescriptionSection({ product }) {
   const [activeTab, setActiveTab] = useState("description");
 
   return (
@@ -15,10 +15,26 @@ export default function DescriptionSection() {
       <DescriptionTabsNav activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <div className="description-tabs-content">
-        {activeTab === "description" && <DescriptionTab />}
-        {activeTab === "reviews" && <CustomerReviewsTab />}
-        {activeTab === "shipping" && <ShippingReturnsTab />}
-        {activeTab === "returns" && <ReturnPoliciesTab />}
+        {activeTab === "description" && (
+          <div className="description-tab-panel">
+            <DescriptionTab product={product} />
+          </div>
+        )}
+        {activeTab === "reviews" && (
+          <div className="description-tab-panel">
+            <CustomerReviewsTab />
+          </div>
+        )}
+        {activeTab === "shipping" && (
+          <div className="description-tab-panel">
+            <ShippingReturnsTab />
+          </div>
+        )}
+        {activeTab === "returns" && (
+          <div className="description-tab-panel">
+            <ReturnPoliciesTab />
+          </div>
+        )}
       </div>
     </section>
   );

@@ -36,13 +36,15 @@ function App() {
         <Route path="/account" element={<PageAccount />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/shopping-cart" element={<ShoppingCartPage />} />
-        <Route path="/product" element={<ProductPage />} />
+        <Route path="/productDetails/:id" element={<ProductPage />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/*" element={<NotFound />} />
         <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
 
       <Footer />
+
+      
     </>
   );
 }

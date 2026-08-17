@@ -1,25 +1,39 @@
 import "./DescriptionTabsNav.css";
 
-const tabs = [
-  { id: "description", label: "Description" },
-  { id: "reviews", label: "Customer Reviews" },
-  { id: "shipping", label: "Shipping & Returns" },
-  { id: "returns", label: "Return Policies" },
-];
-
 export default function DescriptionTabsNav({ activeTab, setActiveTab }) {
   return (
     <div className="description-tabs-nav">
-      {tabs.map((tab) => (
-        <button
-          type="button"
-          key={tab.id}
-          className={activeTab === tab.id ? "tab-button active" : "tab-button"}
-          onClick={() => setActiveTab(tab.id)}
-        >
-          {tab.label}
-        </button>
-      ))}
+      <button
+        type="button"
+        className={activeTab === "description" ? "tab-button active" : "tab-button"}
+        onClick={() => setActiveTab("description")}
+      >
+        Description
+      </button>
+
+      <button
+        type="button"
+        className={activeTab === "reviews" ? "tab-button active" : "tab-button"}
+        onClick={() => setActiveTab("reviews")}
+      >
+        Customer Reviews
+      </button>
+
+      <button
+        type="button"
+        className={activeTab === "shipping" ? "tab-button active" : "tab-button"}
+        onClick={() => setActiveTab("shipping")}
+      >
+        Shipping & Returns
+      </button>
+
+      <button
+        type="button"
+        className={activeTab === "returns" ? "tab-button active" : "tab-button"}
+        onClick={() => setActiveTab("returns")}
+      >
+        Return Policies
+      </button>
     </div>
   );
 }

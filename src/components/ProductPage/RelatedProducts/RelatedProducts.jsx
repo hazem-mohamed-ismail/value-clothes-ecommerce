@@ -6,7 +6,7 @@ import "./RelatedProducts.css";
 
 export default function RelatedProducts() {
   const [active, setActive] = useState("related");
-  const { productsData = [] } = useProductContext() || {};
+  const { productsData } = useProductContext();
 
   const relatedProductsData = productsData.filter(p => [10, 11, 12, 13].includes(p.id));
   const recentlyViewedData = productsData.filter(p => [14, 15, 16, 17].includes(p.id));
@@ -30,9 +30,9 @@ export default function RelatedProducts() {
         </Nav.Link>
       </Nav>
 
-      <div className="row g-4 justify-content-center">
+      <div className="row g-1 justify-content-center">
         {displayProducts.map((product) => (
-          <div key={product.id} className="col-lg-3 col-md-6 col-sm-12">
+          <div key={product.id} className="col-6 col-lg-3">
             <ProductCard product={product} />
           </div>
         ))}

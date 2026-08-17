@@ -6,7 +6,7 @@ import { useProductContext } from "../../context/ProductFromApi";
 import "./CheckOut.css";
 
 export default function CheckOut() {
-  const { loading, error } = useProductContext() || {};
+  const { loading, error } = useProductContext();
 
   return (
     <>

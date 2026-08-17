@@ -40,6 +40,7 @@ export default function SettingContent() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
+    // Special validation for password fields
     if (name === "confirmPassword") {
       setAlertMessage((prev) => ({
         ...prev,
@@ -59,14 +60,8 @@ export default function SettingContent() {
       return;
     }
 
+    // Default: check if field is empty
     setAlertMessage((prev) => ({ ...prev, [name]: value.trim() === "" }));
-  };
-
-  const handleEmail = (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, email: value }));
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    setAlertMessage((prev) => ({ ...prev, email: !isValid }));
   };
 
   const toggleEye = (field) => {
@@ -202,7 +197,7 @@ export default function SettingContent() {
                 <Form.Control
                   name="email"
                   value={formData.email}
-                  onChange={handleEmail}
+                  onChange={handleChange}
                   placeholder="Email Address"
                   className="mb-2"
                 />
