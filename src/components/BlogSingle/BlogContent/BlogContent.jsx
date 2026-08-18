@@ -30,14 +30,14 @@ const BlogContent = () => {
       <div className="blog-image-gallery row g-4">
         <div className="gallery-image-wrapper col-lg-6 col-md-12">
           <img
-            src="\src\assets\shared\cate-1.jpg"
+            src="\assets\shared\cate-1.jpg"
             alt="Fashion layout 1"
             className="gallery-img"
           />
         </div>
         <div className="gallery-image-wrapper col-lg-6 col-md-12">
           <img
-            src="\src\assets\shared\cate-4.jpg"
+            src="\assets\shared\cate-4.jpg"
             alt="Fashion layout 2"
             className="gallery-img"
           />
