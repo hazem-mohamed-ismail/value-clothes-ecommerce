@@ -46,7 +46,7 @@ const ProductDetails = ({ product }) => {
           {"★".repeat(Math.round(rating))}
         </span>
         <span className="border-end pe-2">({reviewCount} reviews)</span>
-        <span className="text-danger fw-medium border-end pe-2">
+        <span className="text-danger fw-medium border-end pe-2 my-auto">
           ⚡ 24 sold in last 32 hours
         </span>
         <span>

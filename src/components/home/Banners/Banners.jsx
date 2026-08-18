@@ -30,7 +30,7 @@ export default function Banners() {
           <div className="col-12 col-md-6">
             <div className="banner-item">
               <img
-                src="src/assets/products/banner-lookbook-1.jpg"
+                src="/assets/products/banner-lookbook-1.jpg"
                 alt="Banner 1"
                 className="img-fluid"
               />
@@ -39,7 +39,7 @@ export default function Banners() {
           <div className="col-12 col-md-6">
             <div className="banner-item">
               <img
-                src="src/assets/products/banner-lookbook-2.jpg"
+                src="/assets/products/banner-lookbook-2.jpg"
                 alt="Banner 2"
                 className="img-fluid"
               />

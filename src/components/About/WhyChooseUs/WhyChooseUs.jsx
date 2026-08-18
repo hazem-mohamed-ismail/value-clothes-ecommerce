@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
       <div className="row align-items-center">
         <div className="col-lg-6 mb-4 mb-lg-0">
           <img
-            src="src/assets/about-us/s-contact-2.jpg"
+            src="/assets/about-us/s-contact-2.jpg"
             className="img-fluid rounded-4 w-100"
             alt="Offering Rare And Beautiful Items"
           />

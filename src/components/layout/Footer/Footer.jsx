@@ -136,10 +136,10 @@ export default function Footer(){
 
           <div className="col-12 col-md-auto text-md-end">
             <div className="d-flex gap-2 justify-content-center justify-content-md-end">
-              <span className="payment-badge"><img src="src/assets/footer/payments/visa.svg" className="w-100 h-100" alt="" /></span>
-              <span className="payment-badge"><img src="src/assets/footer/payments/master-card.svg" className="w-100 h-100" alt="" /></span>
-              <span className="payment-badge"><img src="src/assets/footer/payments/paypal.svg" className="w-100 h-100" alt="" /></span>
-              <span className="payment-badge"><img src="src/assets/footer/payments/discover.svg" className="w-100 h-100" alt="" /></span>
+              <span className="payment-badge"><img src="/assets/footer/payments/visa.svg" className="w-100 h-100" alt="" /></span>
+              <span className="payment-badge"><img src="/assets/footer/payments/master-card.svg" className="w-100 h-100" alt="" /></span>
+              <span className="payment-badge"><img src="/assets/footer/payments/paypal.svg" className="w-100 h-100" alt="" /></span>
+              <span className="payment-badge"><img src="/assets/footer/payments/discover.svg" className="w-100 h-100" alt="" /></span>
             </div>
           </div>
         </div>

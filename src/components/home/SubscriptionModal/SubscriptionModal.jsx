@@ -21,7 +21,7 @@ const SubscriptionModal = () => {
           <div className="row g-0 align-items-stretch flex-column flex-md-row">
             <div className="col-12 col-md-6 modal-image-side">
               <img
-                src="src/assets/home/home-modal.jpg"
+                src="/assets/home/home-modal.jpg"
                 alt="Promotion"
                 className="w-100 h-100 object-fit-cover"
               />

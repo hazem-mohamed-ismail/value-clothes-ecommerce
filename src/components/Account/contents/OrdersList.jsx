@@ -14,7 +14,7 @@ function OrdersList() {
       variant: "XL/Blue",
       price: 30,
       quantity: 5,
-      image: "/src/assets/products/product-2.jpg",
+      image: "/assets/products/product-2.jpg",
     },
     {
       orderNumber: "S184989823",
@@ -24,7 +24,7 @@ function OrdersList() {
       variant: "M/Black",
       price: 20,
       quantity: 3,
-      image: "/src/assets/products/product-3.jpg",
+      image: "/assets/products/product-3.jpg",
     },
     {
       orderNumber: "S184989823",
@@ -34,7 +34,7 @@ function OrdersList() {
       variant: "XL/Blue",
       price: 35,
       quantity: 12,
-      image: "/src/assets/products/product-2.jpg",
+      image: "/assets/products/product-2.jpg",
     },
     {
       orderNumber: "S184989823",
@@ -44,7 +44,7 @@ function OrdersList() {
       variant: "XL/Blue",
       price: 40,
       quantity: 8,
-      image: "/src/assets/products/product-3.jpg",
+      image: "/assets/products/product-3.jpg",
     },
     {
       orderNumber: "S184989823",
@@ -54,7 +54,7 @@ function OrdersList() {
       variant: "XL/Blue",
       price: 25,
       quantity: 6,
-      image: "/src/assets/products/product-3.jpg",
+      image: "/assets/products/product-3.jpg",
     },
   ];
 

@@ -9,7 +9,7 @@ const BlogComments = () => {
       <div className="comment-item">
         <div className="comment-header">
           <img
-            src="/src/assets/shared/avatar-2.jpg"
+            src="/assets/shared/avatar-2.jpg"
             alt="Guy Hawkins"
             className="comment-avatar"
           />
@@ -28,7 +28,7 @@ const BlogComments = () => {
           <div className="reply-header">
             <div className="reply-avatar-brand">
               <img
-                src="/src/assets/shared/avatar-1.jpg"
+                src="/assets/shared/avatar-1.jpg"
                 className="w-100 h-100  rounded-circle"
                 alt=""
               />
@@ -49,7 +49,7 @@ const BlogComments = () => {
       <div className="comment-item">
         <div className="comment-header">
           <img
-            src="/src/assets/shared/avatar-3.jpg"
+            src="/assets/shared/avatar-3.jpg"
             alt="Eleanor Pena"
             className="comment-avatar"
           />

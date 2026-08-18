@@ -3,7 +3,7 @@ import "./RelatedPosts.css";
 const relatedPosts = [
   {
     id: 1,
-    image: "/src/assets/shared/cate-4.jpg",
+    image: "/assets/shared/cate-4.jpg",
     date: "15 August",
     title: "The Secret to Effortless Elegance in Every Season",
     description:
@@ -11,7 +11,7 @@ const relatedPosts = [
   },
   {
     id: 2,
-    image: "/src/assets/shared/cate-5.jpg",
+    image: "/assets/shared/cate-5.jpg",
     date: "18 August",
     title: "Why Accessories Define More Than Just Your Outfit",
     description:
@@ -19,7 +19,7 @@ const relatedPosts = [
   },
   {
     id: 3,
-    image: "/src/assets/shared/cate-1.jpg",
+    image: "/assets/shared/cate-1.jpg",
     date: "19 August",
     title: "From Work to Weekend: Outfits That Do It All",
     description:

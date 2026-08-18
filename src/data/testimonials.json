@@ -5,11 +5,11 @@
     "verified": true,
     "rating": 5,
     "reviewText": "I'm amazed by how comfortable yet stylish this piece is. It pairs effortlessly with everything, and the quality really stands out. Definitely becoming my go-to for everyday looks!",
-    "userImage": "src/assets/home/model-1.jpg",
+    "userImage": "/assets/home/model-1.jpg",
     "product": {
       "name": "High Neck Midi Wool Coat",
       "price": "$29.99",
-      "image": "src/assets/products/product-6.jpg"
+      "image": "/assets/products/product-6.jpg"
     }
   },
   {
@@ -18,11 +18,11 @@
     "verified": true,
     "rating": 5,
     "reviewText": "The fabric feels premium and the fit is exactly what I was looking for. It's comfortable enough for daily wear while still looking elegant. It pairs effortlessly with everything.",
-    "userImage": "src/assets/home/model-2.jpg",
+    "userImage": "/assets/home/model-2.jpg",
     "product": {
       "name": "Oversized Knit Sweater",
       "price": "$34.99",
-      "image": "src/assets/products/product-4.jpg"
+      "image": "/assets/products/product-4.jpg"
     }
   }
 ]

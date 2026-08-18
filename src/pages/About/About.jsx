@@ -16,7 +16,7 @@ export default function About() {
 
       <div className="container pb-4 pt-2">
         <img
-          src="src/assets/about-us/s-contact-1.jpg"
+          src="/assets/about-us/s-contact-1.jpg"
           className="img-fluid rounded-4 planning-img"
           alt=""
         />
