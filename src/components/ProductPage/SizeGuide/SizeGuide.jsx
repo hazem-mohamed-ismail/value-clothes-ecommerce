@@ -111,7 +111,7 @@ function SizeGuide() {
                   <div className="col-md-5 text-center text-md-end mt-3 mt-md-0">
                     <div className="p-2">
                       <img 
-                        src="src\assets\Product Page\size-chart.jpg" 
+                        src="\assets\Product Page\size-chart.jpg" 
                         alt="Measuring Guide" 
                         className="img-fluid d-block mx-auto" 
                         style={{ maxHeight: '160px', width: 'auto' }}
