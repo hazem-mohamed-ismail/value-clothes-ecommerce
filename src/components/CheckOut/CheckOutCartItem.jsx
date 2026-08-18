@@ -22,9 +22,9 @@ export default function CheckOutCartItem({ item }) {
         <h3 className="cart-item-title">{item.title}</h3>
 
         <p className="cart-item-color">
-          Color: <span className="color-value">{item.color || "Default"}</span>
+          Color: <span className="color-value">{item.color}</span>
         </p>
-
+    
         <div className="cart-item-quantity-pill">
           <button
             className="quantity-btn"

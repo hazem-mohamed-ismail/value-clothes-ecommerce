@@ -41,10 +41,7 @@ function App() {
         <Route path="/*" element={<NotFound />} />
         <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
-
       <Footer />
-
-      
     </>
   );
 }

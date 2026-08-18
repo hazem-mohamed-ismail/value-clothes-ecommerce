@@ -13,7 +13,6 @@ import { WishlistProvider } from "./context/WishlistSystem";
 import ProductFromApi from "./context/ProductFromApi";
 
 
-// https://api.escuelajs.co/api/v1/products
 
 
 createRoot(document.getElementById("root")).render(

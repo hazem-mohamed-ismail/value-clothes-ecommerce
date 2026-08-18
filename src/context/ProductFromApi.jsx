@@ -10,15 +10,12 @@ function ProductFromApi({ children }) {
   useEffect(() => {
     async function getProductsData() {
       try {
-        const response = await axios.get(
-          "https://fakestoreapi.com/products",
-        );
+        const response = await axios.get("https://fakestoreapi.com/products");
         setProductsData(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
         setError(true);
       } finally {
-          document.body.scrollTop = 0;
         setLoading(false);
       }
     }
