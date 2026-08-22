@@ -16,6 +16,10 @@ function ProductFromApi({ children }) {
         console.error("Error fetching products:", error);
         setError(true);
       } finally {
+<<<<<<< HEAD
+=======
+          document.body.scrollTop = 0;
+>>>>>>> cf9f7ef1be015a388843af851353d6047950d28f
         setLoading(false);
       }
     }
